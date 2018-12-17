@@ -1,5 +1,7 @@
 # mock_data
 
+[![Build status](https://travis-ci.org/PinkFrojd/mock_data.svg?branch=master)](https://travis-ci.org/PinkFrojd/mock_data)
+
 Generate random data(integer, string, ipv4 and more) using Dart.
 
 <img width="300" src="https://c512911.ssl.cf3.rackcdn.com/Moq2/mock.gif" alt="mocking Nelson Muntz" />
