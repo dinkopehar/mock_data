@@ -15,8 +15,12 @@ import 'consts.dart' show random;
 ///   mockIPv4('*.168.*.*') // returns 'ANY_NUMBER.168.ANY_NUMBER.ANY_NUMBER'
 ///   mockIPv4() == mockIPv4('*.*.*.*')
 /// ```
-String mockIPv4([String format = '*.*.*.*']) =>
-  format.split('.').map((s) =>
-    s.contains('*') ? "${random.nextInt(255 + 1).toString()}." : "$s."
+String mockIPv4([String format = '*.*.*.*']) {
+  var ip = format.split('.').map((s) =>
+  s.contains('*') ? "${random.nextInt(255 + 1).toString()}." : "$s."
   ).join();
+
+  return ip.substring(0, ip.length - 1); // remove last dot character.
+}
+
 

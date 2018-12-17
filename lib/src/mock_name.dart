@@ -3,14 +3,18 @@ import 'consts.dart';
 /// Generate random name.
 ///
 /// Returns `String` representing a first name.
+///
 /// [gender] parameter can be set to `male` to return only
 /// male names or `female` to return only female names. Empty
 /// [gender] returns any male or any female name.
 /// Default is empty string.
+///
 /// Throws [ArgumentError] if gender is set to anything other
 /// than _'male'_ or _'female'_.
+///
 /// For list of male names, check [maleNames].
 /// For list of female names, check [femaleNames].
+///
 /// Example usage:
 /// ```dart
 ///   mockName()         // returns male or female name.
