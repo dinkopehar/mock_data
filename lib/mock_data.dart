@@ -5,6 +5,7 @@ library mock_data;
 export 'src/mock_string.dart';
 export 'src/mock_integer.dart';
 export 'src/mock_ipv4.dart';
+export 'src/mock_name.dart';
 
 /// Generic function to generate list of mocks.
 ///
@@ -38,11 +39,15 @@ export 'src/mock_ipv4.dart';
 ///                           // random strings of length 16 which are
 ///                           // consisted of any combination of digits,
 ///                           // lowercase and uppercase characters.
+///   mockRange(mockName, 15)
+///                           // returns list of length 15 containing
+///                           // random males and females first names.
 /// ```
 List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     {int lengthOfMockedString = 16, String include = '!',
     int min = 1, int max = 10,
-    String format = '*.*.*.*'}){
+    String format = '*.*.*.*',
+    String gender = ''}){
 
   if(mockFunction.toString().contains('mockString')){
     return List<E>.generate(numberOfMocks, (_) =>
@@ -50,9 +55,12 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
   }else if(mockFunction.toString().contains('mockInteger')){
     return List<E>.generate(numberOfMocks, (_) =>
         mockFunction(min, max));
-  }else if(mockFunction.toString().contains('mockIPv4')){
+  }else if(mockFunction.toString().contains('mockIPv4')) {
     return List<E>.generate(numberOfMocks, (_) =>
         mockFunction(format));
+  }else if(mockFunction.toString().contains('mockName')){
+    return List<E>.generate(numberOfMocks, (_) =>
+        mockFunction(gender));
   }else{
     return List<E>(); // Empty List if function is not from mock_data lib.
   }

@@ -1,4 +1,4 @@
-import 'consts.dart';
+import 'consts.dart' show random;
 
 /// Generate random IPv4 address.
 ///

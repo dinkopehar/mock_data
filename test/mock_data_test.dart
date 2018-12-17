@@ -1,3 +1,4 @@
+import 'package:mock_data/src/consts.dart';
 import 'package:mock_data/mock_data.dart';
 import 'package:test/test.dart';
 
@@ -44,4 +45,20 @@ void main() {
 
     });
   });
+
+  group('mockName tests', () {
+
+    test('Test mockName only', () {
+      expect(maleNames.union(femaleNames), contains(mockName()));
+      expect(maleNames, contains(mockName('male')));
+      expect(femaleNames, contains(mockName('female')));
+    });
+
+    test('Test mockName called from mockRange', () {
+      expect(mockRange(mockName, 15).length, 15);
+      expect(femaleNames, containsAll(
+          mockRange(mockName, 15, gender: 'female').toSet()));
+    });
+  });
+
 }

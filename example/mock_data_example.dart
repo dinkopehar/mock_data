@@ -21,9 +21,16 @@ main() {
   mockIPv4('192.168.*.*');
   mockIPv4('192.*.*.55');
 
+  // Mock random name.
+  mockName(); // default set to ''.
+  mockName('male');
+  mockName('female');
+
   // Generate range of mocks of particular function(more at [mockRange]).
   mockRange(mockString, 3);
   mockRange(mockInteger, 5, min: 3, max: 15);
   mockRange(mockIPv4, 7, format: '*.*.0.0');
+  mockRange(mockName, 5, gender: 'male');
+
 
 }

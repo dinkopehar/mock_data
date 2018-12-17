@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/PinkFrojd/mock_data.svg)](https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt)
 [![Build status](https://travis-ci.org/PinkFrojd/mock_data.svg?branch=master)](https://travis-ci.org/PinkFrojd/mock_data)
 
-Generate random data(integer, string, ipv4 and more) using Dart.
+Generate random data(integer, string, ipv4, name and more) using Dart.
 
 <img width="300" src="https://c512911.ssl.cf3.rackcdn.com/Moq2/mock.gif" alt="mocking Nelson Muntz" />
 
@@ -78,11 +78,23 @@ main() {
   // of next two groups and end group of 55.
   mockIPv4('192.*.*.55');
 
+  // Mock first names with given gender:
+  
+  // Generate male or female first name. 
+  mockName();
+  
+  // Generate male first name. 
+  mockName('male');
+  
+  // Generate male first name. 
+  mockName('female');
+
   // Generate range of mocks of particular
   // function(more at documentation).
   mockRange(mockString, 3);
   mockRange(mockInteger, 5, min: 3, max: 15);
   mockRange(mockIPv4, 7, format: '*.*.0.0');
+  mockRange(mockName, 5, gender: 'male');
 
 }
 ```
