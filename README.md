@@ -2,7 +2,7 @@
 
 Generate random data(integer, string, ipv4 and more) using Dart.
 
-<img align="left" width="300" src="https://c512911.ssl.cf3.rackcdn.com/Moq2/mock.gif" alt="mocking Nelson Muntz" />
+<img width="300" src="https://c512911.ssl.cf3.rackcdn.com/Moq2/mock.gif" alt="mocking Nelson Muntz" />
 
 Inspired by: https://www.npmjs.com/package/mock-data
 
