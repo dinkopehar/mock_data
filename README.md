@@ -95,4 +95,4 @@ Please see [TODO][].
 
 [TODO]: https://github.com/PinkFrojd/mock_data/blob/master/TODO.md
 [MIT]: https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt
-[documentation]: https://github.com/
+[documentation]: https://pub.dartlang.org/documentation/mock_data/latest/
