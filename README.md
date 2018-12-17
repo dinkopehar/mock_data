@@ -91,6 +91,6 @@ Please see [TODO][].
 ### License
 [MIT][].
 
-[TODO]: https://github.com/
-[MIT]: https://github.com/
+[TODO]: https://github.com/PinkFrojd/mock_data/blob/master/TODO.md
+[MIT]: https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt
 [documentation]: https://github.com/
