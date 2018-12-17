@@ -1,5 +1,7 @@
 # mock_data
 
+
+[![License](https://img.shields.io/github/license/PinkFrojd/mock_data.svg)](https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt)
 [![Build status](https://travis-ci.org/PinkFrojd/mock_data.svg?branch=master)](https://travis-ci.org/PinkFrojd/mock_data)
 
 Generate random data(integer, string, ipv4 and more) using Dart.
