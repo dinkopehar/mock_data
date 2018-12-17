@@ -49,20 +49,25 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     String format = '*.*.*.*',
     String gender = ''}){
 
-  if(mockFunction.toString().contains('mockString')){
-    return List<E>.generate(numberOfMocks, (_) =>
-        mockFunction(lengthOfMockedString, include));
-  }else if(mockFunction.toString().contains('mockInteger')){
-    return List<E>.generate(numberOfMocks, (_) =>
-        mockFunction(min, max));
-  }else if(mockFunction.toString().contains('mockIPv4')) {
-    return List<E>.generate(numberOfMocks, (_) =>
-        mockFunction(format));
-  }else if(mockFunction.toString().contains('mockName')){
-    return List<E>.generate(numberOfMocks, (_) =>
-        mockFunction(gender));
-  }else{
-    return List<E>(); // Empty List if function is not from mock_data lib.
+  // Get name of passed function.
+  var f = RegExp(r"'(.+)'").firstMatch(mockFunction.toString()).group(1);
+
+  // Call proper function with passed arguments.
+  switch(f){
+    case 'mockString':
+      return List<E>.generate(numberOfMocks, (_) =>
+          mockFunction(lengthOfMockedString, include));
+    case 'mockInteger':
+      return List<E>.generate(numberOfMocks, (_) =>
+          mockFunction(min, max));
+    case 'mockIPv4':
+      return List<E>.generate(numberOfMocks, (_) =>
+          mockFunction(format));
+    case 'mockName':
+      return List<E>.generate(numberOfMocks, (_) =>
+          mockFunction(gender));
+    default:
+      return List<E>(); // Empty List if function is not from mock_data lib.
   }
     
 }
