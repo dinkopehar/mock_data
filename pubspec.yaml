@@ -1,7 +1,7 @@
 name: mock_data
 description: Generate random data(string, integer, IPs, etc...)
 version: 1.0.0
-# homepage: https://www.example.com
+homepage: https://github.com/PinkFrojd/mock_data
 author: Dinko Pehar <dinko.pehar.dev@gmail.com>
 
 environment:
