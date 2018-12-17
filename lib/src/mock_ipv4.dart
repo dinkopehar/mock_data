@@ -1,9 +1,9 @@
-import 'consts.dart' show random;
+import 'constants.dart' show random;
 
 /// Generate random IPv4 address.
 ///
 /// [format] argument accepts integers in range from 0 to 255, separated
-/// by dots, which represent a group or octet in IP.
+/// by dots(`.`), which represent a group or octet in IP.
 /// Group can also be represented with `*`, which generates any
 /// number for particular group.
 ///
@@ -12,7 +12,7 @@ import 'consts.dart' show random;
 /// Example usage:
 /// ```dart
 ///   mockIPv4('192.168.*.*') // returns '192.168.ANY_NUMBER.ANY_NUMBER'
-///   mockIPv4('*.168.*.*') // returns 'ANY_NUMBER.168.ANY_NUMBER.ANY_NUMBER'
+///   mockIPv4('*.168.*.*')   // returns 'ANY_NUMBER.168.ANY_NUMBER.ANY_NUMBER'
 ///   mockIPv4() == mockIPv4('*.*.*.*')
 /// ```
 String mockIPv4([String format = '*.*.*.*']) {

@@ -2,14 +2,14 @@ import 'package:mock_data/mock_data.dart';
 
 main() {
 
-  // Mock string of given length and group of characters.
+  // Mock string from a given length and group of characters.
   mockString(); // default length of 16 and include of '!'.
   mockString(10);
   mockString(15, 'a#');
   mockString(3, '!');
   mockString(7, 'aA');
 
-  // Mock integer in range of min to max.
+  // Mock integer in range from min to max.
   mockInteger(); // default min set to 1 and max to 10.
   mockInteger(3, 30);
   mockInteger(-15, 5);

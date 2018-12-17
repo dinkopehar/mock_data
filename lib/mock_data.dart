@@ -9,14 +9,14 @@ export 'src/mock_name.dart';
 
 /// Generic function to generate list of mocks.
 ///
-/// [mockFunction] represents a function from mock_data library.
+/// [mockFunction] represents a function from _mock_data_ library.
 /// It is passed as first class object (without invocation).
 ///
 /// [numberOfMocks] represents number of invocations of [mockFunction].
 ///
-/// [mockRange] can also accept all parameters of mockFunctions as
+/// `mockRange` can also accept all parameters of [mockFunctions] as
 /// optional named parameters. Default values for optional parameters
-/// is same as for mock_data functions.
+/// is same as for _mock_data_ functions.
 ///
 /// Returns [List<E>].
 ///

@@ -42,7 +42,7 @@ main() {
   // of letters.
   mockString(7, 'aA');
 
-  // Mock integer in range of min to max, inclusive:
+  // Mock integer in range from min to max, inclusive:
   
   // Generate integer in range from min(default 1)
   // to max(default 10). Works with negative numbers.
@@ -78,7 +78,7 @@ main() {
   // of next two groups and end group of 55.
   mockIPv4('192.*.*.55');
 
-  // Mock first names with given gender:
+  // Mock first name from passed gender:
   
   // Generate male or female first name. 
   mockName();
@@ -86,7 +86,7 @@ main() {
   // Generate male first name. 
   mockName('male');
   
-  // Generate male first name. 
+  // Generate female first name. 
   mockName('female');
 
   // Generate range of mocks of particular

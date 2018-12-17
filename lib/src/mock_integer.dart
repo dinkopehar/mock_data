@@ -1,8 +1,8 @@
-import 'consts.dart' show random;
+import 'constants.dart' show random;
 
-/// Generate random integer in range `min` to `max`, inclusive.
+/// Generate random integer in range from `min` to `max`, inclusive.
 ///
-/// Throws [ArgumentError] if `min` is lower or equal than `max`.
+/// Throws [ArgumentError] if `min` is lower than or equal to `max`.
 int mockInteger([int min = 1, int max = 10]){
 
   min >= max ? throw ArgumentError('min should be lower than max') : null;

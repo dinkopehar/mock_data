@@ -1,4 +1,4 @@
-import 'consts.dart' show random;
+import 'constants.dart' show random;
 
 /// Generate random string.
 ///

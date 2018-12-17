@@ -1,4 +1,4 @@
-import 'package:mock_data/src/consts.dart';
+import 'package:mock_data/src/constants.dart';
 import 'package:mock_data/mock_data.dart';
 import 'package:test/test.dart';
 

@@ -1,4 +1,4 @@
-import 'consts.dart';
+import 'constants.dart';
 
 /// Generate random name.
 ///
@@ -12,8 +12,7 @@ import 'consts.dart';
 /// Throws [ArgumentError] if gender is set to anything other
 /// than _'male'_ or _'female'_.
 ///
-/// For list of male names, check [maleNames].
-/// For list of female names, check [femaleNames].
+/// For list of names, check [names](https://github.com/PinkFrojd/mock_data/blob/master/assets/names.md).
 ///
 /// Example usage:
 /// ```dart
