@@ -21,10 +21,15 @@ main() {
   mockIPv4('192.168.*.*');
   mockIPv4('192.*.*.55');
 
-  // Mock random name.
+  // Mock first name.
   mockName(); // default set to ''.
   mockName('male');
   mockName('female');
+
+  // Mock color from a given color model.
+  mockColor(); // default model is 'rgb'.
+  mockColor('hex');
+  mockColor('rgb');
 
   // Generate range of mocks of particular function(more at [mockRange]).
   mockRange(mockString, 3);

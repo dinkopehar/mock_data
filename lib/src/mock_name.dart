@@ -1,6 +1,6 @@
 import 'constants.dart';
 
-/// Generate random name.
+/// Generate random first name.
 ///
 /// Returns `String` representing a first name.
 ///

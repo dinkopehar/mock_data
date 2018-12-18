@@ -22,6 +22,7 @@ void main() {
           lengthOfMockedString: 3).map((s) => s.length).toList(),
           equals(List<int>.generate(5, (_) => 3)));
     });
+
   });
 
   group('mockInteger tests', () {
@@ -52,6 +53,7 @@ void main() {
     test('Test mockIPv4 called from mockRange', () {
       //mockRange(mockIPv4, 15).forEach((ip) => expect(ip.toString(), ));
     });
+
   });
 
   group('mockName tests', () {
@@ -67,6 +69,21 @@ void main() {
       expect(femaleNames, containsAll(
           mockRange(mockName, 15, gender: 'female').toSet()));
     });
+
+  });
+
+  group('mockColor tests', () {
+
+    test('Test mockColor only', () {
+      expect(mockColor(), startsWith('rgb'));
+      expect(mockColor('hex'), startsWith('#'));
+      expect(mockColor('hex').length, equals(7));
+    });
+
+    test('Test mockColor called from mockRange', () {
+      expect(mockRange(mockColor, 15).length, equals(15));
+    });
+
   });
 
 }
