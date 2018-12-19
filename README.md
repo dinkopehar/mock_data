@@ -88,18 +88,45 @@ main() {
   
   // Generate female first name. 
   mockName('female');
-
+  
+  // Mock color from a given color model:
+  
+  // Generate color represented in hex or rgb format.
+  mockColor(); 
+  
+  // Generate color represented in hex format.
+  mockColor('hex');
+  
+  // Generate color represented in rgb format.
+  mockColor('rgb');
+  
+  // Mock url from passed parameters:
+  
+  // Generate url starting with http scheme.
+  mockUrl('http');
+  
+  // Generate url starting with http or https
+  // followed by 1 to 4 paths.
+  mockUrl('*', true);
+  
+  // Generate url starting with https
+  // followed by 1 to 4 paths
+  // followed by fragment(permalink).
+  mockUrl('https', true, false, true);
+  
   // Generate range of mocks of particular
   // function(more at documentation).
   mockRange(mockString, 3);
   mockRange(mockInteger, 5, min: 3, max: 15);
   mockRange(mockIPv4, 7, format: '*.*.0.0');
   mockRange(mockName, 5, gender: 'male');
+  mockRange(mockColor, 12, returnModel: 'hex');
+  mockRange(mockUrl, 4, scheme: 'http', withQuery: true);
 
 }
 ```
 
-More explanation at [documentation][].
+More explanation and examples at [documentation][].
 
 ### TODO
 Please see [TODO][].

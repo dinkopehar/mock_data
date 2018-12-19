@@ -1,6 +1,6 @@
 name: mock_data
 description: Generate random data(string, integer, IPs and more).
-version: 1.1.0
+version: 1.2.0
 homepage: https://github.com/PinkFrojd/mock_data
 author: Dinko Pehar <dinko.pehar.dev@gmail.com>
 
