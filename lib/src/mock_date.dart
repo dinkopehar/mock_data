@@ -13,7 +13,6 @@ import 'constants.dart' show random;
 ///
 /// Example usage:
 /// ```dart
-///
 ///   // returns random DateTime object in between range
 ///   // `1970-01-01 01:00:00.000` and now.
 ///   mockDate()

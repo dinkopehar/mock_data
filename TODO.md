@@ -6,7 +6,6 @@ switch statements. Or alternatively, use [reflections] :worried:.
 - [x] Add additional mock functions to generate random date,
 color, url, name.
 - [ ] Add additional tests and test for `throws`.
-- [ ] Improve usability and usage.
-- Dodaj cascade notation za neke funkcije
+- [ ] Improve usability and usage if needed.
 
 [reflections]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)

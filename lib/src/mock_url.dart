@@ -3,27 +3,26 @@ import 'constants.dart' as cn hide maleNames, femaleNames;
 /// Generate random URL from a given parameters.
 ///
 /// [scheme] represents scheme and a first build part in URL.
-/// Can be set to any value string value(http, https, ftp etc.)
-/// Default set to '*' which represent random selection
-/// of http or https.
+/// Can be set to any string value_(http, https, ftp etc.)_.
+/// Default set to _'*'_ which represent random selection
+/// of `http` or `https`.
 ///
 /// [withPath] represents a path component, consisting
-/// of a sequence of path segments separated by a slash (/).
-/// Default set to false.
+/// of a sequence of path segments separated by a slash _(/)_.
+/// Default set to `false`.
 ///
 /// [withQuery] represents an optional query component
-/// preceded by a question mark (?), containing a query string.
-/// Default set to false.
+/// preceded by a question mark _(?)_, containing a query string.
+/// Default set to `false`.
 ///
 /// [withFragment] represents fragment component preceded
-/// by a hash (#). Usually called permalink.
-/// Default set to false.
+/// by a hash _(#)_. Usually called permalink.
+/// Default set to `false`.
 ///
 /// For complete list of url build parts, check [urlBuildParts](https://github.com/PinkFrojd/mock_data/blob/master/assets/urlBuildParts.md).
 ///
 /// Example usage:
 /// ```dart
-///
 ///   // returns URL starting with 'https' scheme
 ///   // followed by '://example.com' or '://example.net'
 ///   // followed by 1 to 4 random generated paths.

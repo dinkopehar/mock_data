@@ -32,7 +32,7 @@ String mockName([String gender = '']){
     case 'male':
       return maleNames.elementAt(random.nextInt(maleNames.length - 1));
     case 'female':
-      return femaleNames.elementAt(random.nextInt(maleNames.length - 1));
+      return femaleNames.elementAt(random.nextInt(femaleNames.length - 1));
     default:
       return maleNames.union(femaleNames).elementAt(
           random.nextInt(maleNames.length + femaleNames.length));
