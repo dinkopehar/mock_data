@@ -39,11 +39,19 @@ main() {
   mockUrl('*', true, true);
   mockUrl('*', true, false, true);
 
+  // Mock date from in between given moments in time.
+  mockDate(); // default is in between 1970-01-01 01:00:00.000 and now.
+  mockDate(DateTime(1995, 7, 26));
+  mockDate(DateTime(1969, 6, 15, 11, 15), DateTime(2002));
+  mockDate(DateTime.parse("1969-07-20 20:18:04"), DateTime(1989, DateTime.november, 9));
+
   // Generate range of mocks of particular function(more at [mockRange]).
   mockRange(mockString, 3);
   mockRange(mockInteger, 5, min: 3, max: 15);
   mockRange(mockIPv4, 7, format: '*.*.0.0');
   mockRange(mockName, 5, gender: 'male');
+  mockRange(mockColor, 13, returnModel: 'hex');
   mockRange(mockUrl, 5, scheme: 'https', withPath: true, withFragment: true);
+  mockRange(mockDate, 5, firstMoment: DateTime(2010, DateTime.november, 2));
 
 }

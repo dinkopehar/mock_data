@@ -8,6 +8,7 @@ export 'src/mock_ipv4.dart';
 export 'src/mock_name.dart';
 export 'src/mock_color.dart';
 export 'src/mock_url.dart';
+export 'src/mock_date.dart';
 
 /// Generic function to generate list of mocks.
 ///
@@ -56,6 +57,11 @@ export 'src/mock_url.dart';
 ///   // returns list of length 4 containing
 ///   // random URLs with query string and permalink.
 ///   mockRange(mockUrl, 4, withQuery: true, withFragment: true)
+///
+///   // returns list of length 5 containing
+///   // random DateTime objects in between 1970-01-01 01:00:00.000 and
+///   // current time(now).
+///   mockRange(mockDate, 5, secondMoment: DateTime(2000))
 /// ```
 List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     {int lengthOfMockedString = 16, String include = '!',
@@ -63,7 +69,8 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
      String format = '*.*.*.*',
      String gender = '',
      String returnModel = 'rgb',
-     String scheme = '*', bool withPath = false, withQuery = false, withFragment = false}){
+     String scheme = '*', bool withPath = false, withQuery = false, withFragment = false,
+     DateTime firstMoment, DateTime secondMoment}){
 
   // Get name of passed function.
   var f = RegExp(r"'(.+)'").firstMatch(mockFunction.toString()).group(1);
@@ -88,6 +95,9 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     case 'mockUrl':
       return List<E>.generate(numberOfMocks, (_) =>
           mockFunction(scheme, withPath, withQuery, withFragment));
+    case 'mockDate':
+      return List<E>.generate(numberOfMocks, (_) =>
+          mockFunction(firstMoment, secondMoment));
     default:
       return List<E>(); // Empty List if function is not from mock_data lib.
   }

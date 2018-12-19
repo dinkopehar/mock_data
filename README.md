@@ -114,6 +114,24 @@ main() {
   // followed by fragment(permalink).
   mockUrl('https', true, false, true);
   
+  // Mock DateTime from two moments in time:
+    
+  // Generate DateTime object in between
+  // 1970-01-01 01:00:00.000 and now.
+  mockDate();
+  
+  // Generate DateTime object in between
+  // 1995-00-00 00:00:00.000 and now.
+  mockDate(DateTime(1995));
+  
+  // Generate DateTime object in between
+  // 1995-00-00 00:00:00.000 and now.
+  mockDate(DateTime(1995, 26, 7), DateTime(2005, 26, 7));
+  
+  // Generate DateTime object in between
+  // 2015-10-21 04:29:00.000 and now.
+  mockDate(DateTime.parse("2015-10-21 04:29:00"));
+  
   // Generate range of mocks of particular
   // function(more at documentation).
   mockRange(mockString, 3);
@@ -122,6 +140,7 @@ main() {
   mockRange(mockName, 5, gender: 'male');
   mockRange(mockColor, 12, returnModel: 'hex');
   mockRange(mockUrl, 4, scheme: 'http', withQuery: true);
+  mockRange(mockDate, 5, firstMoment: DateTime(2010, DateTime.november, 2));
 
 }
 ```

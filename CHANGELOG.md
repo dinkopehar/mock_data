@@ -1,6 +1,6 @@
 ## 1.2.0
 
-- NEW: mockColor and mockUrl functions
+- NEW: mockColor, mockUrl and mockDate functions
 
 ## 1.1.0
 
