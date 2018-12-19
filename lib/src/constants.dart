@@ -2,7 +2,7 @@ import 'dart:math' show Random;
 
 var random = Random(DateTime.now().millisecondsSinceEpoch);
 
-/// List of all male names for [mockName] function.
+// List of all male names for mockName function.
 var maleNames = Set<String>.from([
   'Liam','Noah','William',
   'James','Logan','Benjamin',
@@ -12,7 +12,7 @@ var maleNames = Set<String>.from([
   'Charles','Joseph','Thomas'
 ]);
 
-/// List of all female names for [mockName] function.
+// List of all female names for mockName function.
 var femaleNames = Set<String>.from([
   'Emma','Olivia','Ava',
   'Isabella','Sophia','Tylor',
@@ -22,3 +22,8 @@ var femaleNames = Set<String>.from([
   'Jennifer','Maria','Susan',
   'Margaret','Dorothy'
 ]);
+
+// Random build parts for mockUrl function.
+var path = List<String>()..addAll(['foo', 'bar', 'buz', 'qux']);
+var query = List<String>()..addAll(['b=3', 'd=4', 'username=waldo', 'q=xyzzy']);
+var fragment = List<String>()..addAll(['here', 'there', 'near', 'above', 'below']);

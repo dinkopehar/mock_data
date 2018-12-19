@@ -86,4 +86,20 @@ void main() {
 
   });
 
+  group('mockColor tests', () {
+
+    test('Test mockUrl only', () {
+      expect(mockUrl(), startsWith('http'));
+      expect(mockUrl('https'), startsWith('https'));
+      expect(mockUrl('http', true, true), allOf(
+          ['http', 'example', '?'].map(contains).toList()));
+      expect(mockUrl('*', false, false, true), contains('#'));
+    });
+
+    test('Test mockColor called from mockRange', () {
+      expect(mockRange(mockUrl, 15).length, equals(15));
+    });
+
+  });
+
 }

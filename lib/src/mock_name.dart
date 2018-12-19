@@ -1,4 +1,4 @@
-import 'constants.dart';
+import 'constants.dart' show random, femaleNames, maleNames;
 
 /// Generate random first name.
 ///

@@ -7,6 +7,7 @@ export 'src/mock_integer.dart';
 export 'src/mock_ipv4.dart';
 export 'src/mock_name.dart';
 export 'src/mock_color.dart';
+export 'src/mock_url.dart';
 
 /// Generic function to generate list of mocks.
 ///
@@ -51,13 +52,18 @@ export 'src/mock_color.dart';
 ///   // returns list of length 7 containing
 ///   // random colors represented in hex format.
 ///   mockRange(mockColor, 7, returnModel: 'hex')
+///
+///   // returns list of length 4 containing
+///   // random URLs with query string and permalink.
+///   mockRange(mockUrl, 4, withQuery: true, withFragment: true)
 /// ```
 List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     {int lengthOfMockedString = 16, String include = '!',
      int min = 1, int max = 10,
      String format = '*.*.*.*',
      String gender = '',
-     String returnModel = 'rgb'}){
+     String returnModel = 'rgb',
+     String scheme = '*', bool withPath = false, withQuery = false, withFragment = false}){
 
   // Get name of passed function.
   var f = RegExp(r"'(.+)'").firstMatch(mockFunction.toString()).group(1);
@@ -79,6 +85,9 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     case 'mockColor':
       return List<E>.generate(numberOfMocks, (_) =>
           mockFunction(returnModel));
+    case 'mockUrl':
+      return List<E>.generate(numberOfMocks, (_) =>
+          mockFunction(scheme, withPath, withQuery, withFragment));
     default:
       return List<E>(); // Empty List if function is not from mock_data lib.
   }

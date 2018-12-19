@@ -31,11 +31,19 @@ main() {
   mockColor('hex');
   mockColor('rgb');
 
+  // Mock url with given properties.
+  mockUrl(); // default scheme set to '*' and all other parameters are false.
+  mockUrl('http');
+  mockUrl('https');
+  mockUrl('*', true);
+  mockUrl('*', true, true);
+  mockUrl('*', true, false, true);
+
   // Generate range of mocks of particular function(more at [mockRange]).
   mockRange(mockString, 3);
   mockRange(mockInteger, 5, min: 3, max: 15);
   mockRange(mockIPv4, 7, format: '*.*.0.0');
   mockRange(mockName, 5, gender: 'male');
-
+  mockRange(mockUrl, 5, scheme: 'https', withPath: true, withFragment: true);
 
 }
