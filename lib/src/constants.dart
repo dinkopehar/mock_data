@@ -9,7 +9,18 @@ var maleNames = Set<String>.from([
   'Mason','Elijah','Oliver',
   'Jacob','John','Robert',
   'Michael','David','Richard',
-  'Charles','Joseph','Thomas'
+  'Charles','Joseph','Thomas',
+  'Owen','Dylan','Luke',
+  'Gabriel','Anthony','Isaac',
+  'Grayson','Jack','Levi',
+  'Christopher','Joshua','Andrew',
+  'Lincoln','Mateo','Ryan',
+  'Aron','Jonathan','Connor',
+  'Nolan','Nicholas','Austin',
+  'Evan','Maverick','Parker',
+  'Kevin','Miles','Luis',
+  'Justin','Max','Ivan',
+  'Eric', 'Blake'
 ]);
 
 // List of all female names for mockName function.
@@ -20,7 +31,17 @@ var femaleNames = Set<String>.from([
   'Abigail','Mary','Patricia',
   'Linda','Barbara','Elizabeth',
   'Jennifer','Maria','Susan',
-  'Margaret','Dorothy'
+  'Margaret','Dorothy', 'Emily',
+  'Madison','Hannah','Olivia',
+  'Abigail','Ashley','Samantha',
+  'Alexa','Alexis','Sarah',
+  'Alyssa','Grace','Sophia',
+  'Rachel','Megan','Kaitlyn',
+  'Katherine','Savannah','Ella',
+  'Alexandra','Haley','Allison',
+  'Maria','Nicole','Kaylee',
+  'Lily','Stephanie','Melanie',
+  'Marissa','Claire'
 ]);
 
 // Random build parts for mockUrl function.

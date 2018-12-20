@@ -100,6 +100,15 @@ main() {
   // Generate color represented in rgb format.
   mockColor('rgb');
   
+  // Generate color represented in hsl format.
+  mockColor('hsl');
+  
+  // Generate color represented in hsv format.
+  mockColor('hsv');
+  
+  // Generate color represented in cmyk format.
+  mockColor('cmyk');
+  
   // Mock url from passed parameters:
   
   // Generate url starting with http scheme.

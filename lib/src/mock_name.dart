@@ -24,8 +24,11 @@ String mockName([String gender = '']){
 
   // Passed gender should be 'male' or 'female'
   // so it must be contained in 'fe(male)' string.
-  if( !('female'.contains(gender)) ){
-    throw ArgumentError('Invalid gender value');
+  // fem or mal or all other such words contained in female.
+  if(gender != '') {
+    if (!(gender == 'male' || gender == 'female')) {
+      throw ArgumentError('Invalid gender value');
+    }
   }
 
   switch(gender){
