@@ -4,7 +4,7 @@ library mock_data;
 
 export 'src/mock_string.dart';
 export 'src/mock_integer.dart';
-export 'src/mock_ipv4.dart';
+export 'src/mock_ip.dart';
 export 'src/mock_name.dart';
 export 'src/mock_color.dart';
 export 'src/mock_url.dart';

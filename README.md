@@ -78,6 +78,11 @@ main() {
   // of next two groups and end group of 55.
   mockIPv4('192.*.*.55');
 
+  // Generate IPv6;
+  mockIPv6();
+  mockIPv6('*:e331:93bf:*:a7c9:a63:*:*');
+  mockIPv6('e1b3:7bae:*:3474:*:c0cc:462:c4b9');
+
   // Mock first name from passed gender:
   
   // Generate male or female first name. 
@@ -99,6 +104,15 @@ main() {
   
   // Generate color represented in rgb format.
   mockColor('rgb');
+  
+  // Generate color represented in hsl format.
+  mockColor('hsl');
+  
+  // Generate color represented in hsv format.
+  mockColor('hsv');
+  
+  // Generate color represented in cmyk format.
+  mockColor('cmyk');
   
   // Mock url from passed parameters:
   
