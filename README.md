@@ -164,6 +164,10 @@ More explanation and examples at [documentation][].
 ### TODO
 Please see [TODO][].
 
+### Contributors
+- [Dinko Pehar](https://github.com/PinkFrojd)
+- [Nagasai Bodepudi](https://github.com/nagasaiBodepudi)
+
 ### License
 [MIT][].
 
