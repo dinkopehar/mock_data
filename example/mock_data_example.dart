@@ -21,15 +21,25 @@ main() {
   mockIPv4('192.168.*.*');
   mockIPv4('192.*.*.55');
 
+  // Mock IPv6 with given format.
+  mockIPv6(); // default format set to '*:*:*:*:*:*:*:*'.
+  mockIPv6('*:e331:93bf:*:a7c9:a63:*:*');
+  mockIPv6('e1b3:7bae:*:3474:*:c0cc:462:c4b9');
+
   // Mock first name.
-  mockName(); // default set to ''.
+  mockName(); // default set to 'any'.
+  mockName('any'); // default set to 'any'.
   mockName('male');
   mockName('female');
 
   // Mock color from a given color model.
   mockColor(); // default model is 'rgb'.
-  mockColor('hex');
-  mockColor('rgb');
+  print(mockColor('hex'));
+  print(mockColor('rgb'));
+  print(mockColor('hsv'));
+  print(mockColor('hsb'));
+  print(mockColor('hsl'));
+  print(mockColor('cmyk'));
 
   // Mock url with given properties.
   mockUrl(); // default scheme set to '*' and all other parameters are false.
@@ -49,6 +59,7 @@ main() {
   mockRange(mockString, 3);
   mockRange(mockInteger, 5, min: 3, max: 15);
   mockRange(mockIPv4, 7, format: '*.*.0.0');
+  mockRange(mockIPv6, 7, format: '*:*:*:e37b:abcd:*:*:*');
   mockRange(mockName, 5, gender: 'male');
   mockRange(mockColor, 13, returnModel: 'hex');
   mockRange(mockUrl, 5, scheme: 'https', withPath: true, withFragment: true);

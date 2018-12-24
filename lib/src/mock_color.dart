@@ -2,10 +2,10 @@ import 'constants.dart' show random;
 
 /// Generate random color from a given model.
 ///
-/// [model] expects a value of `'rgb'`, `'hex'`, `'hsv'`, `'hsb'`, `'hsl'` or `'cmyk'`
-///  where each set represents respective color space.
-/// hex format with leading hash tag sign(#).
-///
+/// [model] expects a value of `'rgb'`, `'hex'`, `'hsv'`,
+/// `'hsb'`, `'hsl'` or `'cmyk'` where each value
+/// represents respective color space.
+/// hex format starts with leading hash tag sign(#).
 ///
 /// Defaults to 'rgb'.
 ///
@@ -13,8 +13,10 @@ import 'constants.dart' show random;
 /// ```dart
 ///   mockColor('rgb') // returns 'rgb(r, g, b)' where r, g and b are random
 ///                    // integers between 0 and 255, inclusive.
+///
 ///   mockColor('hex') // returns '#XXXXXX' where each pair represents
 ///                    // r, g, b expressed in hex format.
+///
 ///   mockColor('hsv') // hsv and hsb are same.
 ///                    // returns 'hsv(h,s,v)' where h represents hue ranges
 ///                    // 0-360 degrees, s for saturation ranges from 0-100% and
@@ -30,28 +32,25 @@ import 'constants.dart' show random;
 /// ```
 String mockColor([String returnModel = 'rgb']){
 
-  var rgb_color = List<int>.generate(3, (_) => random.nextInt(255 + 1));
-
-  List<int> hsvl_color = [random.nextInt(360), random.nextInt(100), random.nextInt(100)];
-
-  var cmyk_color = List<int>.generate(4, (_) => random.nextInt(100));
-  var _cmyk_color = cmyk_color.map((k) => k/100);
-
   switch(returnModel){
     case 'hex':
-      var _color = rgb_color.map((channel) =>
-          channel.toRadixString(16).padLeft(2, '0')).toList();
-      return '#${_color.join().toUpperCase()}';
+      return '#${List<String>.generate(3, (_) =>
+          random.nextInt(255 + 1).toRadixString(16).padLeft(2, '0'))
+          .toList()
+          .join().toUpperCase()}';
     case 'rgb':
-      return 'rgb(${rgb_color.join(', ')})';
+      return 'rgb(${List<int>.generate(3, (_) => random.nextInt(255 + 1))
+          .join(', ')})';
     case 'hsv':
-      return 'hsv(${hsvl_color[0]}, ${hsvl_color[1]}%, ${hsvl_color[2]}%)';
     case 'hsb':
-      return 'hsb(${hsvl_color[0]}, ${hsvl_color[1]}%, ${hsvl_color[2]}%)';
     case 'hsl':
-      return 'hsl(${hsvl_color[0]}, ${hsvl_color[1]}%, ${hsvl_color[2]}%)';
+      var hs = List<String>()..add(random.nextInt(360 + 1).toString());
+      hs.add('${random.nextInt(100 + 1).toString()}%');
+      hs.add('${random.nextInt(100 + 1).toString()}%');
+      return '${returnModel}(${hs.join(', ')})';
     case 'cmyk':
-      return 'cmyk(${_cmyk_color.join(', ')})';
+      return 'cmyk(${List<String>.generate(4, (_) =>
+        '${random.nextInt(100 + 1).toString()}%').join(', ')})';
     default:
       throw ArgumentError('Invalid color model');
       break;

@@ -14,13 +14,13 @@ var maleNames = Set<String>.from([
   'Gabriel','Anthony','Isaac',
   'Grayson','Jack','Levi',
   'Christopher','Joshua','Andrew',
-  'Lincoln','Mateo','Ryan',
   'Aron','Jonathan','Connor',
   'Nolan','Nicholas','Austin',
   'Evan','Maverick','Parker',
   'Kevin','Miles','Luis',
   'Justin','Max','Ivan',
-  'Eric', 'Blake'
+  'Eric', 'Blake','Lincoln',
+  'Ryan'
 ]);
 
 // List of all female names for mockName function.
@@ -31,17 +31,15 @@ var femaleNames = Set<String>.from([
   'Abigail','Mary','Patricia',
   'Linda','Barbara','Elizabeth',
   'Jennifer','Maria','Susan',
-  'Margaret','Dorothy', 'Emily',
-  'Madison','Hannah','Olivia',
-  'Abigail','Ashley','Samantha',
+  'Margaret','Dorothy','Emily',
+  'Madison','Hannah','Ashley',
   'Alexa','Alexis','Sarah',
-  'Alyssa','Grace','Sophia',
+  'Alyssa','Grace','Marissa',
   'Rachel','Megan','Kaitlyn',
   'Katherine','Savannah','Ella',
   'Alexandra','Haley','Allison',
-  'Maria','Nicole','Kaylee',
   'Lily','Stephanie','Melanie',
-  'Marissa','Claire'
+  'Claire','Nicole','Kaylee','Samantha'
 ]);
 
 // Random build parts for mockUrl function.

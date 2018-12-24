@@ -57,7 +57,7 @@ main() {
   // Generate integer in range from -25 to -15.
   mockInteger(-25, -15);
 
-  // Mock IPv4 with given format:
+  // Mock IPv4 or IPv6 with given format:
   
   // Generate IPv4 represented with
   // format(default is '*.*.*.*') as String. 
@@ -78,7 +78,7 @@ main() {
   // of next two groups and end group of 55.
   mockIPv4('192.*.*.55');
 
-  // Generate IPv6;
+  // Generate IPv6, same usage as with IPv4.
   mockIPv6();
   mockIPv6('*:e331:93bf:*:a7c9:a63:*:*');
   mockIPv6('e1b3:7bae:*:3474:*:c0cc:462:c4b9');
@@ -102,16 +102,16 @@ main() {
   // Generate color represented in hex format.
   mockColor('hex');
   
-  // Generate color represented in rgb format.
+  // Generate color represented in RGB format.
   mockColor('rgb');
   
-  // Generate color represented in hsl format.
+  // Generate color represented in HSL format.
   mockColor('hsl');
   
-  // Generate color represented in hsv format.
+  // Generate color represented in HSV format.
   mockColor('hsv');
   
-  // Generate color represented in cmyk format.
+  // Generate color represented in CMYK format.
   mockColor('cmyk');
   
   // Mock url from passed parameters:

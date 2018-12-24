@@ -56,6 +56,19 @@ void main() {
 
   });
 
+  group('mockIPv6 tests', () {
+
+    test('Test mockIPv6 only', () {
+      expect(mockIPv6('e331:93bf:*:*:a7c9:a63:*:*'), startsWith('e331:93bf:'));
+      expect(mockIPv6().split(':').length, equals(8));
+    });
+
+    test('Test mockIPv6 called from mockRange', () {
+      //mockRange(mockIPv6, 15).forEach((ip) => expect(ip.toString(), ));
+    });
+
+  });
+
   group('mockName tests', () {
 
     test('Test mockName only', () {
@@ -66,8 +79,7 @@ void main() {
 
     test('Test mockName called from mockRange', () {
       expect(mockRange(mockName, 15).length, equals(15));
-      expect(femaleNames, containsAll(
-          mockRange(mockName, 15, gender: 'female').toSet()));
+      expect(femaleNames, containsAll(mockRange(mockName, 15, gender: 'female').toSet()));
     });
 
   });
@@ -78,6 +90,11 @@ void main() {
       expect(mockColor(), startsWith('rgb'));
       expect(mockColor('hex'), startsWith('#'));
       expect(mockColor('hex').length, equals(7));
+      expect(mockColor('rgb'), startsWith('rgb('));
+      expect(mockColor('hsv'), startsWith('hsv('));
+      expect(mockColor('hsb'), startsWith('hsb('));
+      expect(mockColor('hsl'), startsWith('hsl('));
+      expect(mockColor('cmyk'), startsWith('cmyk('));
     });
 
     test('Test mockColor called from mockRange', () {

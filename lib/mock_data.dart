@@ -35,6 +35,9 @@ export 'src/mock_date.dart';
 ///   // in range 0 to 255, inclusive.
 ///   mockRange(mockIPv4, 5, format:192.168.*.*)
 ///
+///   // similar to IPv4.
+///   mockRange(mockIPv6, 5, format:192.168.*.*)
+///
 ///   // returns list of length 5 containing
 ///   // random integers ranging from -15
 ///   // to 20, inclusive.
@@ -67,7 +70,7 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     {int lengthOfMockedString = 16, String include = '!',
      int min = 1, int max = 10,
      String format = '*.*.*.*',
-     String gender = '',
+     String gender = 'any',
      String returnModel = 'rgb',
      String scheme = '*', bool withPath = false, withQuery = false, withFragment = false,
      DateTime firstMoment, DateTime secondMoment}){
@@ -84,6 +87,9 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
       return List<E>.generate(numberOfMocks, (_) =>
           mockFunction(min, max));
     case 'mockIPv4':
+      return List<E>.generate(numberOfMocks, (_) =>
+          mockFunction(format));
+    case 'mockIPv6':
       return List<E>.generate(numberOfMocks, (_) =>
           mockFunction(format));
     case 'mockName':
