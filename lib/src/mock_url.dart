@@ -36,12 +36,14 @@ import 'constants.dart' as cn hide maleNames, femaleNames;
 ///   // Example: 'http://example.com?username=waldo&q=xyzzy'
 ///   mockUrl(scheme: 'http', false, true)
 /// ```
-String mockUrl([String scheme = '*', bool withPath = false,
-  withQuery = false, withFragment = false]){
-
+String mockUrl(
+    [String scheme = '*',
+    bool withPath = false,
+    withQuery = false,
+    withFragment = false]) {
   var url = StringBuffer();
 
-  switch(scheme){
+  switch (scheme) {
     case '*':
       url.write(cn.random.nextInt(2) == 1 ? 'http://' : 'https://');
       break;
@@ -52,41 +54,38 @@ String mockUrl([String scheme = '*', bool withPath = false,
 
   url.write(cn.random.nextInt(2) == 1 ? 'example.com' : 'example.net');
 
-  if(withPath){
-
+  if (withPath) {
     url.write('/');
 
     // 1 to 4 paths can be generated.
     var numberOfPaths = cn.random.nextInt(cn.path.length) + 1;
     var paths = Set<String>();
 
-    while(paths.length < numberOfPaths){
+    while (paths.length < numberOfPaths) {
       paths.add(cn.path.elementAt(cn.random.nextInt(cn.path.length)));
     }
 
     url.write(paths.join('/'));
   }
 
-  if(withQuery){
-
+  if (withQuery) {
     url.write('?');
 
     // 1 to 4 queries can be generated.
     var numberOfQueries = cn.random.nextInt(cn.query.length) + 1;
     var queries = Set<String>();
 
-    while(queries.length < numberOfQueries){
+    while (queries.length < numberOfQueries) {
       queries.add(cn.query.elementAt(cn.random.nextInt(cn.query.length)));
     }
 
     url.write(queries.join('&'));
   }
 
-  if(withFragment){
+  if (withFragment) {
     url.write('#');
     url.write(cn.fragment.elementAt(cn.random.nextInt(cn.fragment.length)));
   }
 
   return url.toString();
-
 }

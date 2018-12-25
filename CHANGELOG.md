@@ -1,3 +1,7 @@
+## 1.2.2
+
+- [Maintenance](https://pub.dartlang.org/packages/mock_data#-analysis-tab-)
+
 ## 1.2.1
 
 - UPDATED: Added support for IPv6 instead of IPv4 only.

@@ -33,31 +33,32 @@ import 'constants.dart' show random;
 ///                       // consisted of digits.
 ///                       // Example: 51321, 74214, 06910 etc.
 /// ```
-String mockString([int lengthOfMockedString = 16, String include = '!']){
-
+String mockString([int lengthOfMockedString = 16, String include = '!']) {
   // Check for validity of parameters.
 
-  lengthOfMockedString <= 0 ? throw ArgumentError('Length must be integer '
-      'higher than 0'): null;
+  lengthOfMockedString <= 0
+      ? throw ArgumentError('Length must be integer '
+          'higher than 0')
+      : null;
 
   include.length == 0 ? throw ArgumentError('Empty include parameter') : null;
 
   include.split('').forEach((s) {
-    if(!('aA#!'.contains(s))) throw ArgumentError('Invalid include parameter');
+    if (!('aA#!'.contains(s))) throw ArgumentError('Invalid include parameter');
   });
 
   // Representation of all characters that will be generated
   // based on [include] parameter.
   var allChars = StringBuffer();
 
-  for(var c in include.split('')){
-    if(c.contains('!')){
-      allChars.writeAll(["abcdefghijklmnopqrstuvwxyz",
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
+  for (var c in include.split('')) {
+    if (c.contains('!')) {
+      allChars.writeAll(
+          ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
           "0123456789");
       break;
     }
-    switch(c){
+    switch (c) {
       case 'a':
         allChars.write("abcdefghijklmnopqrstuvwxyz");
         break;
@@ -74,10 +75,5 @@ String mockString([int lengthOfMockedString = 16, String include = '!']){
 
   // Generate sequence of chars with length == [lengthOfMockedString]
   return List<String>.generate(lengthOfMockedString,
-          (_) => allChars.toString()[random.nextInt(allChars.length)])
-         .join();
-
+      (_) => allChars.toString()[random.nextInt(allChars.length)]).join();
 }
-
-
-

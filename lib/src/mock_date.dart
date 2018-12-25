@@ -24,16 +24,18 @@ import 'constants.dart' show random;
 ///   // returns random DateTime object in between range
 ///   // `1969-07-20 20:18:04.000` and `1989-11-9 00:00:00.000`.
 ///   mockDate(DateTime.parse("1969-07-20 20:18:04"), DateTime(1989, DateTime.november, 9))
-DateTime mockDate([DateTime firstMoment, DateTime secondMoment]){
-  
+/// ```
+DateTime mockDate([DateTime firstMoment, DateTime secondMoment]) {
   firstMoment ??= DateTime.fromMillisecondsSinceEpoch(0);
   secondMoment ??= DateTime.now();
 
-  secondMoment.isBefore(firstMoment) ? throw ArgumentError('Second DateTime '
-  'moment should be after first DateTime moment.') : null;
+  secondMoment.isBefore(firstMoment)
+      ? throw ArgumentError('Second DateTime '
+          'moment should be after first DateTime moment.')
+      : null;
 
   Duration difference = secondMoment.difference(firstMoment);
 
-  return firstMoment.add(
-      Duration(seconds: random.nextInt(difference.inSeconds + 1)));
+  return firstMoment
+      .add(Duration(seconds: random.nextInt(difference.inSeconds + 1)));
 }

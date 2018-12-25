@@ -5,7 +5,7 @@ import 'constants.dart' show random;
 /// [model] expects a value of `'rgb'`, `'hex'`, `'hsv'`,
 /// `'hsb'`, `'hsl'` or `'cmyk'` where each value
 /// represents respective color space.
-/// hex format starts with leading hash tag sign(#).
+/// Hex format starts with leading hash tag sign(#).
 ///
 /// Defaults to 'rgb'.
 ///
@@ -30,17 +30,12 @@ import 'constants.dart' show random;
 ///                    // each ranges from 0 to 1.
 ///   mockColor() == mockColor('rgb')
 /// ```
-String mockColor([String returnModel = 'rgb']){
-
-  switch(returnModel){
+String mockColor([String returnModel = 'rgb']) {
+  switch (returnModel) {
     case 'hex':
-      return '#${List<String>.generate(3, (_) =>
-          random.nextInt(255 + 1).toRadixString(16).padLeft(2, '0'))
-          .toList()
-          .join().toUpperCase()}';
+      return '#${List<String>.generate(3, (_) => random.nextInt(255 + 1).toRadixString(16).padLeft(2, '0')).toList().join().toUpperCase()}';
     case 'rgb':
-      return 'rgb(${List<int>.generate(3, (_) => random.nextInt(255 + 1))
-          .join(', ')})';
+      return 'rgb(${List<int>.generate(3, (_) => random.nextInt(255 + 1)).join(', ')})';
     case 'hsv':
     case 'hsb':
     case 'hsl':
@@ -49,8 +44,7 @@ String mockColor([String returnModel = 'rgb']){
       hs.add('${random.nextInt(100 + 1).toString()}%');
       return '${returnModel}(${hs.join(', ')})';
     case 'cmyk':
-      return 'cmyk(${List<String>.generate(4, (_) =>
-        '${random.nextInt(100 + 1).toString()}%').join(', ')})';
+      return 'cmyk(${List<String>.generate(4, (_) => '${random.nextInt(100 + 1).toString()}%').join(', ')})';
     default:
       throw ArgumentError('Invalid color model');
       break;

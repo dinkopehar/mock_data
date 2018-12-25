@@ -1,4 +1,15 @@
-/// Mock any random data; strings, integers, IPs and so much more.
+/// Generate random data using Dart.
+///
+/// List of random data to generate:
+/// * **colors** with various color spaces
+/// * **date** between different moments in time
+/// * **integers** in between range of numbers
+/// * **IPs** ~ IPv4 and IPv6
+/// * **name**; male or female first name
+/// * **strings** of different length and characters
+/// * **url** with different parts; routes, GET query parameters and fragments
+///
+/// Inspired by: https://www.npmjs.com/package/mock-data
 
 library mock_data;
 
@@ -67,45 +78,44 @@ export 'src/mock_date.dart';
 ///   mockRange(mockDate, 5, secondMoment: DateTime(2000))
 /// ```
 List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
-    {int lengthOfMockedString = 16, String include = '!',
-     int min = 1, int max = 10,
-     String format = '*.*.*.*',
-     String gender = 'any',
-     String returnModel = 'rgb',
-     String scheme = '*', bool withPath = false, withQuery = false, withFragment = false,
-     DateTime firstMoment, DateTime secondMoment}){
-
+    {int lengthOfMockedString = 16,
+    String include = '!',
+    int min = 1,
+    int max = 10,
+    String format = '*.*.*.*',
+    String gender = 'any',
+    String returnModel = 'rgb',
+    String scheme = '*',
+    bool withPath = false,
+    withQuery = false,
+    withFragment = false,
+    DateTime firstMoment,
+    DateTime secondMoment}) {
   // Get name of passed function.
   var f = RegExp(r"'(.+)'").firstMatch(mockFunction.toString()).group(1);
 
   // Call proper function with passed arguments.
-  switch(f){
+  switch (f) {
     case 'mockString':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(lengthOfMockedString, include));
+      return List<E>.generate(
+          numberOfMocks, (_) => mockFunction(lengthOfMockedString, include));
     case 'mockInteger':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(min, max));
+      return List<E>.generate(numberOfMocks, (_) => mockFunction(min, max));
     case 'mockIPv4':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(format));
+      return List<E>.generate(numberOfMocks, (_) => mockFunction(format));
     case 'mockIPv6':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(format));
+      return List<E>.generate(numberOfMocks, (_) => mockFunction(format));
     case 'mockName':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(gender));
+      return List<E>.generate(numberOfMocks, (_) => mockFunction(gender));
     case 'mockColor':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(returnModel));
+      return List<E>.generate(numberOfMocks, (_) => mockFunction(returnModel));
     case 'mockUrl':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(scheme, withPath, withQuery, withFragment));
+      return List<E>.generate(numberOfMocks,
+          (_) => mockFunction(scheme, withPath, withQuery, withFragment));
     case 'mockDate':
-      return List<E>.generate(numberOfMocks, (_) =>
-          mockFunction(firstMoment, secondMoment));
+      return List<E>.generate(
+          numberOfMocks, (_) => mockFunction(firstMoment, secondMoment));
     default:
       return List<E>(); // Empty List if function is not from mock_data lib.
   }
-    
 }

@@ -4,7 +4,16 @@
 [![License](https://img.shields.io/github/license/PinkFrojd/mock_data.svg)](https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt)
 [![Build status](https://travis-ci.org/PinkFrojd/mock_data.svg?branch=master)](https://travis-ci.org/PinkFrojd/mock_data)
 
-Generate random data(integer, string, ipv4, name and more) using Dart.
+Generate random data using Dart.
+
+List of random data to generate:
+* **colors** with various color spaces
+* **date** between different moments in time
+* **integers** in between range of numbers
+* **IPs** ~ IPv4 and IPv6
+* **name**; male or female first name
+* **strings** of different length and characters
+* **url** with different parts; routes, GET query parameters and fragments
 
 <img width="300" src="https://c512911.ssl.cf3.rackcdn.com/Moq2/mock.gif" alt="mocking Nelson Muntz" />
 

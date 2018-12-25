@@ -18,20 +18,23 @@ import 'constants.dart' show random;
 String mockIPv4([String format = '*.*.*.*']) {
   var ip = format.split('.');
 
-  if(ip.length != 4)
+  if (ip.length != 4)
     throw ArgumentError('Invalid IPv4 format - Must contain 4 groups');
 
-  var _ip = ip.map((s){
-    if(s == '*'){
-      return '${random.nextInt(255 + 1).toString()}.';
-    }
+  var _ip = ip
+      .map((s) {
+        if (s == '*') {
+          return '${random.nextInt(255 + 1).toString()}.';
+        }
 
-    if(int.tryParse(s) >= 0 && int.tryParse(s) <= 255){
-      return '$s.';
-    }else{
-      throw ArgumentError('Integers must be in range of 0 and 255');
-    }
-  }).toList().join();
+        if (int.tryParse(s) >= 0 && int.tryParse(s) <= 255) {
+          return '$s.';
+        } else {
+          throw ArgumentError('Integers must be in range of 0 and 255');
+        }
+      })
+      .toList()
+      .join();
 
   return _ip.substring(0, _ip.length - 1);
 }
@@ -53,25 +56,26 @@ String mockIPv4([String format = '*.*.*.*']) {
 /// ```
 
 String mockIPv6([String format = '*:*:*:*:*:*:*:*']) {
-
   var ip = format.split(':');
 
-  if(ip.length != 8)
+  if (ip.length != 8)
     throw ArgumentError('Invalid IPv6 format - Must contain 8 groups');
 
-  var _ip = ip.map((s){
-    if(s == '*'){
-      return '${random.nextInt(65535 + 1).toRadixString(16).padLeft(4, '0')}:';
-    }
+  var _ip = ip
+      .map((s) {
+        if (s == '*') {
+          return '${random.nextInt(65535 + 1).toRadixString(16).padLeft(4, '0')}:';
+        }
 
-    if(int.tryParse(s, radix:16) >= 0 && int.tryParse(s, radix:16) <= 65536){
-      return '${s.padLeft(4, '0')}:';
-    }else{
-      throw ArgumentError('Integers must be in range of 0 and 65536');
-    }
-  }).toList().join();
+        if (int.tryParse(s, radix: 16) >= 0 &&
+            int.tryParse(s, radix: 16) <= 65536) {
+          return '${s.padLeft(4, '0')}:';
+        } else {
+          throw ArgumentError('Integers must be in range of 0 and 65536');
+        }
+      })
+      .toList()
+      .join();
 
   return _ip.substring(0, _ip.length - 1);
 }
-
-
