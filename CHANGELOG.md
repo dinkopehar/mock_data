@@ -1,6 +1,6 @@
-## 1.2.2
+## 1.2.2 - 1.2.4
 
-- [Maintenance](https://pub.dartlang.org/packages/mock_data#-analysis-tab-)
+- [Maintenance](https://pub.dartlang.org/packages/mock_data#-analysis-tab-) score increased
 
 ## 1.2.1
 
