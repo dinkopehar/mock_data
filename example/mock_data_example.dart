@@ -34,12 +34,12 @@ main() {
 
   // Mock color from a given color model.
   mockColor(); // default model is 'rgb'.
-  print(mockColor('hex'));
-  print(mockColor('rgb'));
-  print(mockColor('hsv'));
-  print(mockColor('hsb'));
-  print(mockColor('hsl'));
-  print(mockColor('cmyk'));
+  mockColor('hex');
+  mockColor('rgb');
+  mockColor('hsv');
+  mockColor('hsb');
+  mockColor('hsl');
+  mockColor('cmyk');
 
   // Mock url with given properties.
   mockUrl(); // default scheme set to '*' and all other parameters are false.
