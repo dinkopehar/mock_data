@@ -1,4 +1,5 @@
-import 'constants.dart' show random, femaleNames, maleNames;
+import 'constants.dart' show random;
+import 'constants_name.dart' show firstNamesFemale, firstNamesMale, lastNames, prefixesMale, prefixesFemale;
 
 /// Generate random first name.
 ///
@@ -33,11 +34,11 @@ String mockName([String gender = '']){
 
   switch(gender){
     case 'male':
-      return maleNames.elementAt(random.nextInt(maleNames.length - 1));
+      return firstNamesMale.elementAt(random.nextInt(firstNamesMale.length - 1)) + ' ' + lastNames.elementAt(random.nextInt(lastNames.length - 1));
     case 'female':
-      return femaleNames.elementAt(random.nextInt(femaleNames.length - 1));
+      return firstNamesFemale.elementAt(random.nextInt(firstNamesFemale.length - 1)) + ' ' + lastNames.elementAt(random.nextInt(lastNames.length - 1));
     default:
-      return maleNames.union(femaleNames).elementAt(
-          random.nextInt(maleNames.length + femaleNames.length));
+      return firstNamesFemale.union(firstNamesMale).elementAt(
+          random.nextInt(firstNamesFemale.length + firstNamesMale.length));
   }
 }
