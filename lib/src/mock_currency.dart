@@ -37,9 +37,18 @@ String mockCurrency([String currencyType = '']){
       String currencyRandom = cryptocurrencyKeys.elementAt(random.nextInt(cryptocurrencyKeys.length - 1));
       return  currencyRandom + ' - ' + cryptocurrencies[currencyRandom];
     case 'both':
-      return firstNamesFemale.elementAt(random.nextInt(firstNamesFemale.length - 1)) + ' ' + lastNames.elementAt(random.nextInt(lastNames.length - 1));
-    default:
+      var cryptocurrencyKeys = Set<String>.from(cryptocurrencies.keys.toList());
       var currencyKeys = Set<String>.from(cryptocurrencies.keys.toList());
+      String currencyRandom = cryptocurrencyKeys.union(currencyKeys).elementAt(
+          random.nextInt(cryptocurrencyKeys.length + currencyKeys.length));
+      try{
+        currencyRandom = currencyRandom + ' - ' + cryptocurrencies[currencyRandom];
+      } catch(e){
+        currencyRandom = currencyRandom + ' - ' + currencies[currencyRandom];
+      }
+      return currencyRandom;
+    default:
+      var currencyKeys = Set<String>.from(currencies.keys.toList());
       String currencyRandom = currencyKeys.elementAt(random.nextInt(currencyKeys.length - 1));
       return  currencyRandom + ' - ' + currencies[currencyRandom];
   }
