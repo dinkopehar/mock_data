@@ -9,6 +9,7 @@ export 'src/mock_name.dart';
 export 'src/mock_color.dart';
 export 'src/mock_url.dart';
 export 'src/mock_date.dart';
+export 'src/mock_currency.dart';
 
 /// Generic function to generate list of mocks.
 ///

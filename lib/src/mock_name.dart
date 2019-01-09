@@ -39,6 +39,6 @@ String mockName([String gender = '']){
       return firstNamesFemale.elementAt(random.nextInt(firstNamesFemale.length - 1)) + ' ' + lastNames.elementAt(random.nextInt(lastNames.length - 1));
     default:
       return firstNamesFemale.union(firstNamesMale).elementAt(
-          random.nextInt(firstNamesFemale.length + firstNamesMale.length));
+          random.nextInt(firstNamesFemale.length + firstNamesMale.length - 1)) + ' ' + lastNames.elementAt(random.nextInt(lastNames.length - 1));
   }
 }

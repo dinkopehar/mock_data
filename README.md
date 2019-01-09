@@ -146,6 +146,12 @@ main() {
   // 2015-10-21 04:29:00.000 and now.
   mockDate(DateTime.parse("2015-10-21 04:29:00"));
   
+  // Mocks currency
+  // Returns a currency from the list
+  mockCurrency();         // returns regular currency.
+  mockCurrency('both');   // returns regular or crypto currency.
+  mockCurrency('crypto'); // returns crypto currency.
+  
   // Generate range of mocks of particular
   // function(more at documentation).
   mockRange(mockString, 3);
