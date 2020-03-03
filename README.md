@@ -2,7 +2,7 @@
 
 
 [![License](https://img.shields.io/github/license/PinkFrojd/mock_data.svg)](https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt)
-[![Build status](https://travis-ci.org/PinkFrojd/mock_data.svg?branch=master)](https://travis-ci.org/PinkFrojd/mock_data)
+![Dart CI](https://github.com/dinko-pehar/mock_data/workflows/Dart%20CI/badge.svg?branch=master)
 
 Generate random data using Dart.
 
