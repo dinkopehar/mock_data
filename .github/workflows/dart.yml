@@ -1,0 +1,25 @@
+name: Dart CI
+
+on:
+  pull_request:
+    branches:
+    - master
+  push:
+    branches:
+    - master
+
+jobs:
+  test:
+
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    container:
+      image:  google/dart:latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: pub get
+    - name: Run tests
+      run: pub run test
