@@ -3,7 +3,6 @@ description: Generate random data using Dart. Can be used to create random strin
   integers, names, colors, IPs, UUIDs, URLs and dates.
 version: 1.2.6
 homepage: https://github.com/PinkFrojd/mock_data
-author: Dinko Pehar <dinko.pehar.dev@gmail.com>
 
 environment:
   sdk: '>=2.0.0 <3.0.0'

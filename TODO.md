@@ -7,5 +7,6 @@ switch statements. Or alternatively, use [reflections] :worried:.
 color, url, name.
 - [ ] Add additional tests and test for `throws`.
 - [ ] Improve usability and usage if needed.
+- [ ] Add notification to Telegram Bot on builds.
 
 [reflections]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
