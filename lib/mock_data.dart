@@ -8,6 +8,7 @@
 /// * **name**; male or female first name
 /// * **strings** of different length and characters
 /// * **url** with different parts; routes, GET query parameters and fragments
+/// * **uuid** ~ version 4, timestamp-first and null
 ///
 /// Inspired by: https://www.npmjs.com/package/mock-data
 
@@ -20,6 +21,7 @@ export 'src/mock_name.dart';
 export 'src/mock_color.dart';
 export 'src/mock_url.dart';
 export 'src/mock_date.dart';
+export 'src/mock_uuid.dart';
 
 /// Generic function to generate list of mocks.
 ///
@@ -76,6 +78,10 @@ export 'src/mock_date.dart';
 ///   // random DateTime objects in between 1970-01-01 01:00:00.000 and
 ///   // current time(now).
 ///   mockRange(mockDate, 5, secondMoment: DateTime(2000))
+///
+///   // returns list of length 3 containing
+///   // timestamp-first UUIDs.
+///   mockRange(mockUUID, 3, uuidType: 'timestamp-first')
 /// ```
 List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     {int lengthOfMockedString = 16,
@@ -90,7 +96,8 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     withQuery = false,
     withFragment = false,
     DateTime firstMoment,
-    DateTime secondMoment}) {
+    DateTime secondMoment,
+    String uuidType = 'ver4'}) {
   // Get name of passed function.
   var f = RegExp(r"'(.+)'").firstMatch(mockFunction.toString()).group(1);
 
@@ -115,6 +122,8 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     case 'mockDate':
       return List<E>.generate(
           numberOfMocks, (_) => mockFunction(firstMoment, secondMoment));
+    case 'mockUUID':
+      return List<E>.generate(numberOfMocks, (_) => mockFunction(uuidType));
     default:
       return List<E>(); // Empty List if function is not from mock_data lib.
   }
