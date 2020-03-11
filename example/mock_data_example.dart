@@ -55,6 +55,13 @@ main() {
   mockDate(DateTime(1969, 6, 15, 11, 15), DateTime(2002));
   mockDate(DateTime.parse("1969-07-20 20:18:04"), DateTime(1989, DateTime.november, 9));
 
+  // Mock UUID; can be null, UUIDv4 and Timestamp-first UUID.
+  mockUUID(); // default is UUIDv4
+  mockUUID('timestamp-first'); // Non standard version 4 UUID.
+                               // First 8 characters represent a time and rest
+                               // are random (useful for sorting).
+  mockUUID('null'); // 00000000-0000-0000-0000-000000000000
+
   // Generate range of mocks of particular function(more at [mockRange]).
   mockRange(mockString, 3);
   mockRange(mockInteger, 5, min: 3, max: 15);
@@ -64,5 +71,5 @@ main() {
   mockRange(mockColor, 13, returnModel: 'hex');
   mockRange(mockUrl, 5, scheme: 'https', withPath: true, withFragment: true);
   mockRange(mockDate, 5, firstMoment: DateTime(2010, DateTime.november, 2));
-
+  mockRange(mockUUID, 4, uuidType: 'ver4');
 }

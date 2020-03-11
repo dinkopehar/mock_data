@@ -1,3 +1,8 @@
+# 1.2.6
+
+- NEW: `mockUUID` function for generating version 4 UUID.
+- IMPROVED: Health suggestions for analysis tab.
+
 ## 1.2.2 - 1.2.5
 
 - [Maintenance](https://pub.dartlang.org/packages/mock_data#-analysis-tab-) score increased

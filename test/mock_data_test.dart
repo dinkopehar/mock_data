@@ -119,6 +119,31 @@ void main() {
 
   });
 
+  group('mockUUID tests', () {
+
+    test('Test mockUUID only', () {
+      // Test UUID length.
+      expect(mockUUID(), hasLength(36));
+      expect(mockUUID('null'), hasLength(36));
+      expect(mockUUID('timestamp-first'), hasLength(36));
+
+      // All UUIDs should contain 4 dash characters.
+      expect(mockUUID(), contains('-'));
+      // UUID should contain 5 segments.
+      expect(mockUUID().split('-'), hasLength(5));
+      // Test null UUID.
+      expect(mockUUID('null'), equals('00000000-0000-0000-0000-000000000000'));
+      // Test invalid argument.
+      // TODO: Check when ArgumentError is raised.
+      //expect(mockUUID('invalid-arg'), throwsA(TypeMatcher<ArgumentError>()));
+    });
+
+    test('Test mockUUID called from mockRange', () {
+      expect(mockRange(mockUUID, 5).length, equals(5));
+    });
+
+  });
+
   group('mockDate tests', () {
 
     test('Test mockDate only', () {

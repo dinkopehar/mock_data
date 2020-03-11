@@ -14,6 +14,7 @@ List of random data to generate:
 * **name**; male or female first name
 * **strings** of different length and characters
 * **url** with different parts; routes, GET query parameters and fragments
+* **UUIDs** ~ Timestamp-first, null and standard UUIDv4
 
 <img width="300" src="https://c512911.ssl.cf3.rackcdn.com/Moq2/mock.gif" alt="mocking Nelson Muntz" />
 
@@ -155,6 +156,13 @@ main() {
   // 2015-10-21 04:29:00.000 and now.
   mockDate(DateTime.parse("2015-10-21 04:29:00"));
   
+  // Mock UUID; can be null, UUIDv4 and Timestamp-first UUID.
+  mockUUID(); // default is UUIDv4
+  // Non standard version 4 UUID. First 8 characters represent a time and rest
+  // are random.
+  mockUUID('timestamp-first');
+  mockUUID('null'); // 00000000-0000-0000-0000-000000000000
+
   // Generate range of mocks of particular
   // function(more at documentation).
   mockRange(mockString, 3);
@@ -164,6 +172,7 @@ main() {
   mockRange(mockColor, 12, returnModel: 'hex');
   mockRange(mockUrl, 4, scheme: 'http', withQuery: true);
   mockRange(mockDate, 5, firstMoment: DateTime(2010, DateTime.november, 2));
+  mockRange(mockUUID, 4, uuidType: 'standard');
 
 }
 ```
