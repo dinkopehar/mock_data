@@ -41,7 +41,7 @@ String mockString([int lengthOfMockedString = 16, String include = '!']) {
           'higher than 0')
       : null;
 
-  include.length == 0 ? throw ArgumentError('Empty include parameter') : null;
+  include.isEmpty ? throw ArgumentError('Empty include parameter') : null;
 
   include.split('').forEach((s) {
     if (!('aA#!'.contains(s))) throw ArgumentError('Invalid include parameter');

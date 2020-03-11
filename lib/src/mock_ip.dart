@@ -18,8 +18,9 @@ import 'constants.dart' show random;
 String mockIPv4([String format = '*.*.*.*']) {
   var ip = format.split('.');
 
-  if (ip.length != 4)
+  if (ip.length != 4) {
     throw ArgumentError('Invalid IPv4 format - Must contain 4 groups');
+  }
 
   var _ip = ip
       .map((s) {
@@ -58,8 +59,9 @@ String mockIPv4([String format = '*.*.*.*']) {
 String mockIPv6([String format = '*:*:*:*:*:*:*:*']) {
   var ip = format.split(':');
 
-  if (ip.length != 8)
+  if (ip.length != 8) {
     throw ArgumentError('Invalid IPv6 format - Must contain 8 groups');
+  }
 
   var _ip = ip
       .map((s) {
