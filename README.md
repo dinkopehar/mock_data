@@ -62,4 +62,4 @@ These are some basic examples. Reading [examples][] you can learn about all meth
 
 [TODO]: https://github.com/PinkFrojd/mock_data/blob/master/TODO.md
 [MIT]: https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt
-[examples]: https://pub.dev/packages/mock_data#-example-tab
+[examples]: https://pub.dev/packages/mock_data#-example-tab-
