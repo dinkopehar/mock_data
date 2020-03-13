@@ -1,4 +1,10 @@
-# 1.2.6
+# 1.2.7
+- IMPROVED: README.md section reduced to basic examples. For more advanced
+            usage refer to examples section.
+- UPDATED: TODO file removed. Refer to Project tab for Roadmap.
+- UPDATED: Issue templates when opening new issue.
+
+## 1.2.6
 
 - NEW: `mockUUID` function for generating version 4 UUID.
 - IMPROVED: Health suggestions for analysis tab.
