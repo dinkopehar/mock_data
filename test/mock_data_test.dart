@@ -15,7 +15,7 @@ void main() {
       //expect(mockString(0), isArgumentError);
       //expect(mockString(-1), throwsArgumentError);
     });
-    
+
     test('Test mockString called from mockRange', () {
       expect(mockRange(mockString, 10).length, equals(10));
       expect(mockRange(mockString, 5,
