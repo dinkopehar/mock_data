@@ -1,15 +1,15 @@
 
 <p align="center">
   <img width="300" src="assets/mock_data_logo.png" alt="Mock Data Logo" /><br>
-  <a href="https://github.com/dinko-pehar/mock_data/workflows/Dart%20CI/badge.svg?branch=master"><img src="https://github.com/dinko-pehar/mock_data/workflows/Dart%20CI/badge.svg?branch=master" alt="Build Status"></a>
-  <a href="https://img.shields.io/github/license/PinkFrojd/mock_data.svg"><img src="https://img.shields.io/github/license/PinkFrojd/mock_data.svg" alt="License"></a>
-  <a href="https://img.shields.io/pub/v/mock_data"><img src="https://img.shields.io/pub/v/mock_data" alt="Version"></a><br>
-  Generate random data using <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/dart/dart.png" alt="Dart" width="16" height="16">.
+  <a href="https://github.com/dinko-pehar/mock_data/actions"><img src="https://github.com/dinko-pehar/mock_data/workflows/Dart%20CI/badge.svg?branch=master" alt="Build Status"></a>
+  <a href="LICENSE.txt"><img src="https://img.shields.io/github/license/PinkFrojd/mock_data.svg" alt="License"></a>
+  <a href="https://pub.dev/packages/mock_data"><img src="https://img.shields.io/pub/v/mock_data" alt="Version"></a><br>
+  Generate random data using <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/dart/dart.png" alt="Dart" width="16" height="16">
 </p>
 
-## Key Features
+## Features
 
-Generate anything you need:
+API provides generation of:
 
 - *Integers* in any range of numbers
 - *Strings* with various characters and length
