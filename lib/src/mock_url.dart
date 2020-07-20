@@ -48,7 +48,7 @@ String mockUrl(
       url.write(cn.random.nextInt(2) == 1 ? 'http://' : 'https://');
       break;
     default: // Any scheme
-      url.write("$scheme://");
+      url.write('$scheme://');
       break;
   }
 

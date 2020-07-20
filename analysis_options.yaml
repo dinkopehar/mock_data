@@ -1,6 +1,11 @@
+include: package:pedantic/analysis_options.yaml
+
+# My though on this is that source code is more self explanatory
+# about types of variables then declaring it with var
 analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+  errors:
+    prefer_collection_literals: ignore
+    omit_local_variable_types: ignore
 
 # Lint rules and documentation, see http://dart-lang.github.io/linter/lints
 linter:
