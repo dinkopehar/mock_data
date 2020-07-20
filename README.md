@@ -1,23 +1,24 @@
-# mock_data
 
-[![License](https://img.shields.io/github/license/PinkFrojd/mock_data.svg)](https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt)
-![Dart CI](https://github.com/dinko-pehar/mock_data/workflows/Dart%20CI/badge.svg?branch=master)
+<p align="center">
+  <img width="300" src="assets/mock_data_logo.png" alt="Mock Data Logo" /><br>
+  <a href="https://github.com/dinko-pehar/mock_data/actions"><img src="https://github.com/dinko-pehar/mock_data/workflows/Dart%20CI/badge.svg?branch=master" alt="Build Status"></a>
+  <a href="LICENSE.txt"><img src="https://img.shields.io/github/license/PinkFrojd/mock_data.svg" alt="License"></a>
+  <a href="https://pub.dev/packages/mock_data"><img src="https://img.shields.io/pub/v/mock_data" alt="Version"></a><br>
+  Generate random data using <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/dart/dart.png" alt="Dart" width="16" height="16">
+</p>
 
-Generate random data using Dart.
+## Features
 
-List of random data to generate:
-* **colors** with various color spaces
-* **date** between different moments in time
-* **integers** in between range of numbers
-* **IPs** ~ IPv4 and IPv6
-* **name**; male or female first name
-* **strings** of different length and characters
-* **url** with different parts; routes, GET query parameters and fragments
-* **UUIDs** ~ Timestamp-first, null and standard UUIDv4
+API provides generation of:
 
-<img width="300" src="https://c512911.ssl.cf3.rackcdn.com/Moq2/mock.gif" alt="mocking Nelson Muntz" />
-
-Inspired by: https://www.npmjs.com/package/mock-data
+- *Integers* in any range of numbers
+- *Strings* with various characters and length
+- *Colors* represented with needed color space
+- *Date*s between different moments in time
+- *Name*s such as John or Mary
+- *UUIDv4* and *Timestamp-first UUIDs*
+- *URL*s with many fragments
+- *IPv4* and *IPv6*
 
 ## Usage
 
@@ -32,13 +33,9 @@ main() {
   mockName('male');     // Generate male first name. 
   mockName('female');   // Generate female first name. 
 
-  mockInteger(7, 10);   // Generate integer in range from 7 do 10.
+  mockInteger(1, 6);    // Generate integer in range from 1 do 6.
 
-  mockString(10);       // Generate string of length 10.
-
-  mockString(20, 'a#'); // Generate string of length 20 and any
-                        // combination of lowercase letters
-                        // and digits.
+  mockString(16);       // Generate string of length 16.
   
   mockIPv4();           // Generate IPv4 represented with 
                         // format(default is '*.*.*.*') as String. 
@@ -48,10 +45,12 @@ main() {
   mockColor('hex');     // Generate color represented in hex format.
   mockColor('rgb');     // Generate color represented in RGB format.
   
+  mockUUID();           // Generate UUIDv4
+  
 }
 ```
 
-These are some basic examples. Reading [examples][] you can learn about all methods, their usage and explanation. 
+These are some basic examples. There are many more methods and they all support tweeking of parameters to suit you in generating random data. By reading [examples][] you can learn more about functionality and usage of `mock_data`
 
 ### Contributors
 - [Dinko Pehar](https://github.com/dinko-pehar)
@@ -60,6 +59,5 @@ These are some basic examples. Reading [examples][] you can learn about all meth
 ### License
 [MIT][]
 
-[TODO]: https://github.com/PinkFrojd/mock_data/blob/master/TODO.md
 [MIT]: https://github.com/PinkFrojd/mock_data/blob/master/LICENSE.txt
 [examples]: https://pub.dev/packages/mock_data#-example-tab-
