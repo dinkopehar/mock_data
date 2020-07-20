@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img width="300" src="assets/mock_data_logo.png" alt="Mock Data Logo" /><br>
+  <img width="300" src="https://github.com/dinko-pehar/mock_data/blob/master/assets/mock_data_logo.png" alt="Mock Data Logo" /><br>
   <a href="https://github.com/dinko-pehar/mock_data/actions"><img src="https://github.com/dinko-pehar/mock_data/workflows/Dart%20CI/badge.svg?branch=master" alt="Build Status"></a>
   <a href="LICENSE.txt"><img src="https://img.shields.io/github/license/PinkFrojd/mock_data.svg" alt="License"></a>
   <a href="https://pub.dev/packages/mock_data"><img src="https://img.shields.io/pub/v/mock_data" alt="Version"></a><br>
