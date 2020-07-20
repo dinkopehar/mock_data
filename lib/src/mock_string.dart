@@ -54,19 +54,19 @@ String mockString([int lengthOfMockedString = 16, String include = '!']) {
   for (var c in include.split('')) {
     if (c.contains('!')) {
       allChars.writeAll(
-          ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
-          "0123456789");
+          ['abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'],
+          '0123456789');
       break;
     }
     switch (c) {
       case 'a':
-        allChars.write("abcdefghijklmnopqrstuvwxyz");
+        allChars.write('abcdefghijklmnopqrstuvwxyz');
         break;
       case 'A':
-        allChars.write("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+        allChars.write('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
         break;
       case '#':
-        allChars.write("0123456789");
+        allChars.write('0123456789');
         break;
       default:
         break;
