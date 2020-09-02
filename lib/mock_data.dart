@@ -22,6 +22,7 @@ export 'src/mock_color.dart';
 export 'src/mock_url.dart';
 export 'src/mock_date.dart';
 export 'src/mock_uuid.dart';
+export 'src/mock_location.dart';
 
 /// Generic function to generate list of mocks.
 ///
@@ -82,6 +83,9 @@ export 'src/mock_uuid.dart';
 ///   // returns list of length 3 containing
 ///   // timestamp-first UUIDs.
 ///   mockRange(mockUUID, 3, uuidType: 'timestamp-first')
+///
+///   // returns list containing random locations in 1km radius from Moscow Kremlin.
+///   mockRange(mockLocation, 55.7520, 37.6175, 1000)
 /// ```
 List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     {int lengthOfMockedString = 16,
@@ -97,7 +101,10 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
     withFragment = false,
     DateTime firstMoment,
     DateTime secondMoment,
-    String uuidType = 'ver4'}) {
+    String uuidType = 'ver4',
+    double centerLat = 55.7520,
+    double centerLon = 37.6175,
+    int radius = 1000}) {
   // Get name of passed function.
   var f = RegExp(r"'(.+)'").firstMatch(mockFunction.toString()).group(1);
 
@@ -124,6 +131,8 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
           numberOfMocks, (_) => mockFunction(firstMoment, secondMoment));
     case 'mockUUID':
       return List<E>.generate(numberOfMocks, (_) => mockFunction(uuidType));
+    case 'mockLocation':
+      return List<E>.generate(numberOfMocks, (_) => mockFunction(centerLat, centerLon, radius));
     default:
       return List<E>(); // Empty List if function is not from mock_data lib.
   }

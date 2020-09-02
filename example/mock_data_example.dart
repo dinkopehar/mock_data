@@ -91,6 +91,12 @@ main() {
   mockUUID('null');            // 00000000-0000-0000-0000-000000000000
   // ---------
 
+  // Mock location.
+  // ---------
+  mockLocation();                  // Generate random location on the Earth
+  mockLocation(53.5587, 108.1650, 1000); // Generate random location in radius 1000 metres from the point.
+  // ---------
+
   // Generate range of mocks of particular function(more at [mockRange]).
   // Use [mockRange] to generate list of random values of specified function.
   // Also supports passing parameters to specified function.
@@ -108,5 +114,6 @@ main() {
   mockRange(mockUrl, 5, scheme: 'https', withPath: true, withFragment: true);
   mockRange(mockDate, 5, firstMoment: DateTime(2010, DateTime.november, 2));
   mockRange(mockUUID, 4, uuidType: 'ver4');
+  mockRange(mockLocation, 10);
   // ---------
 }
