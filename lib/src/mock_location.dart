@@ -4,37 +4,31 @@ import 'constants.dart' show random;
 
 final R = 6372800;
 
-class Location {
-  double lat;
-  double lon;
-  Location(this.lat, this.lon);
-}
-
 /// Generate random latitude longitude in `radius` from `centerLat` to `centerLon`, inclusive.
 /// If any argument is null, random location will be returned.
-Location mockLocation([double centerLat, double centerLon, int radius]) {
+Map<String, double> mockLocation([double latitude, double longitude, int radius]) {
+  Map<String, double> location = Map();
 
-  if (centerLat == null || centerLon == null || radius == null) {
-    return Location(random.nextDouble() * 90, random.nextDouble() * 180);
+  if (latitude == null || longitude == null || radius == null) {
+    location['lat'] = random.nextDouble() * 90 * (random.nextBool() ? 1 : -1);
+    location['lon'] = random.nextDouble() * 180 * (random.nextBool() ? 1 : -1);
+  } else {
+    // Convert radius from meters to degrees
+    double radiusInDegrees = radius / 111000.0;
+
+    double u = random.nextDouble();
+    double v = random.nextDouble();
+    double w = radiusInDegrees * sqrt(u);
+    double t = 2 * pi * v;
+    double x = w * cos(t);
+    double y = w * sin(t);
+
+    // Adjust the x-coordinate for the shrinking of the east-west distances
+    location['lon'] = x / cos(_toRadians(latitude)) + longitude;
+    location['lat'] = y + latitude;
   }
 
-  // Convert radius from meters to degrees
-  double radiusInDegrees = radius / 111000.0;
-
-  double u = random.nextDouble();
-  double v = random.nextDouble();
-  double w = radiusInDegrees * sqrt(u);
-  double t = 2 * pi * v;
-  double x = w * cos(t);
-  double y = w * sin(t);
-
-  // Adjust the x-coordinate for the shrinking of the east-west distances
-  double new_x = x / cos(_toRadians(centerLat));
-
-  double foundLongitude = new_x + centerLon;
-  double foundLatitude = y + centerLat;
-
-  return Location(foundLatitude, foundLongitude);
+  return location;
 }
 
 /// Distance between two locations calculated with Haversine formula.
