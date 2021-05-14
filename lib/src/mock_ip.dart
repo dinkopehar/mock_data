@@ -28,7 +28,9 @@ String mockIPv4([String format = '*.*.*.*']) {
           return '${random.nextInt(255 + 1).toString()}.';
         }
 
-        if (int.tryParse(s) >= 0 && int.tryParse(s) <= 255) {
+        var parsedGroup = int.tryParse(s);
+
+        if (parsedGroup != null && parsedGroup >= 0 && parsedGroup <= 255) {
           return '$s.';
         } else {
           throw ArgumentError('Integers must be in range of 0 and 255');
@@ -69,8 +71,9 @@ String mockIPv6([String format = '*:*:*:*:*:*:*:*']) {
           return '${random.nextInt(65535 + 1).toRadixString(16).padLeft(4, '0')}:';
         }
 
-        if (int.tryParse(s, radix: 16) >= 0 &&
-            int.tryParse(s, radix: 16) <= 65536) {
+        var parsedGroup = int.tryParse(s, radix: 16);
+
+        if (parsedGroup != null && parsedGroup >= 0 && parsedGroup <= 65536) {
           return '${s.padLeft(4, '0')}:';
         } else {
           throw ArgumentError('Integers must be in range of 0 and 65536');

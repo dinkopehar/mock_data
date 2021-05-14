@@ -39,14 +39,13 @@ String mockColor([String returnModel = 'rgb']) {
     case 'hsv':
     case 'hsb':
     case 'hsl':
-      var hs = List<String>()..add(random.nextInt(360 + 1).toString());
+      var hs = <String>[random.nextInt(360 + 1).toString()];
       hs.add('${random.nextInt(100 + 1).toString()}%');
       hs.add('${random.nextInt(100 + 1).toString()}%');
-      return '${returnModel}(${hs.join(', ')})';
+      return '$returnModel(${hs.join(', ')})';
     case 'cmyk':
       return 'cmyk(${List<String>.generate(4, (_) => '${random.nextInt(100 + 1).toString()}%').join(', ')})';
     default:
       throw ArgumentError('Invalid color model');
-      break;
   }
 }

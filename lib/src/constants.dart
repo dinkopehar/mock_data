@@ -106,7 +106,6 @@ var femaleNames = Set<String>.from([
 ]);
 
 // Random build parts for mockUrl function.
-var path = List<String>()..addAll(['foo', 'bar', 'buz', 'qux']);
-var query = List<String>()..addAll(['b=3', 'd=4', 'username=waldo', 'q=xyzzy']);
-var fragment = List<String>()
-  ..addAll(['here', 'there', 'near', 'above', 'below']);
+var path = <String>['foo', 'bar', 'buz', 'qux'];
+var query = <String>['b=3', 'd=4', 'username=waldo', 'q=xyzzy'];
+var fragment = <String>['here', 'there', 'near', 'above', 'below'];

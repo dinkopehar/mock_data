@@ -26,7 +26,7 @@ String mockUUID([String uuidType = 'ver4']) {
     case 'null':
       break;
     default:
-      throw ArgumentError('Invalid uuidType ${uuidType}. Possible choices are: '
+      throw ArgumentError('Invalid uuidType $uuidType. Possible choices are: '
           'ver4, timestamp-first and null');
   }
 
