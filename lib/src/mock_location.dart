@@ -6,7 +6,8 @@ final R = 6372800;
 
 /// Generate random latitude longitude in `radius` from `centerLat` to `centerLon`, inclusive.
 /// If any argument is null, random location will be returned.
-Map<String, double> mockLocation([double latitude, double longitude, int radius]) {
+Map<String, double> mockLocation(
+    [double? latitude, double? longitude, int? radius]) {
   Map<String, double> location = Map();
 
   if (latitude == null || longitude == null || radius == null) {
@@ -37,7 +38,8 @@ double distance(double lat1, double lon1, double lat2, double lon2) {
   double dLon = _toRadians(lon2 - lon1);
   lat1 = _toRadians(lat1);
   lat2 = _toRadians(lat2);
-  double a = pow(sin(dLat / 2), 2) + pow(sin(dLon / 2), 2) * cos(lat1) * cos(lat2);
+  double a =
+      pow(sin(dLat / 2), 2) + pow(sin(dLon / 2), 2) * cos(lat1) * cos(lat2);
   double c = 2 * asin(sqrt(a));
   return R * c;
 }

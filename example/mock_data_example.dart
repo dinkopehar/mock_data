@@ -1,7 +1,6 @@
 import 'package:mock_data/mock_data.dart';
 
-main() {
-
+void main() {
   // Mock string from a given length and group of characters.
   // ---------
   mockString();         // String of length 16(default).
@@ -9,7 +8,7 @@ main() {
   mockString(15, 'a#'); // String with length 15 from combination
                         // of lowercase letters and numbers.
   mockString(3, '!');   // String with length 3 from combination
-                        // of lowercase and uppercase letters 
+                        // of lowercase and uppercase letters
                         // and numbers.
   mockString(7, 'aA');  // String with length 7 from combination
                         // of lowercase and uppercase letters.
@@ -61,24 +60,24 @@ main() {
   // ---------
   mockUrl('http');                  // URL with value http://example.net
   mockUrl('https');                 // URL with value https://example.net
-  mockUrl('*', true);               // Returns one of above URLs with 
+  mockUrl('*', true);               // Returns one of above URLs with
                                     // 1 to 4 paths, for example https://example.net/bar/baz/
   mockUrl('*', true, true);         // Returns one of above URLs with path
-                                    // and query arguments 
+                                    // and query arguments
                                     // https://example.net/bar?b=3&username=waldo
   mockUrl('*', true, false, true);  // Fragment part https://example.net/bar/baz?b=3&username=waldo#above
   // ---------
 
   // Mock date from in between given moments in time.
   // ---------
-  mockDate();                             // Date in between 
-                                          // 1970-01-01 01:00:00.000 
+  mockDate();                             // Date in between
+                                          // 1970-01-01 01:00:00.000
                                           // and now (default).
   mockDate(DateTime(1995, 7, 26));        // Date in between 1995-7-26
                                           // and now.
-  mockDate(DateTime(1969, 6, 15, 11, 15), 
+  mockDate(DateTime(1969, 6, 15, 11, 15),
            DateTime(2002));
-  mockDate(DateTime.parse("1969-07-20 20:18:04"), 
+  mockDate(DateTime.parse('1969-07-20 20:18:04'),
            DateTime(1989, DateTime.november, 9));
   // ---------
 

@@ -25,7 +25,7 @@ import 'constants.dart' show random;
 ///   // `1969-07-20 20:18:04.000` and `1989-11-9 00:00:00.000`.
 ///   mockDate(DateTime.parse("1969-07-20 20:18:04"), DateTime(1989, DateTime.november, 9))
 /// ```
-DateTime mockDate([DateTime firstMoment, DateTime secondMoment]) {
+DateTime mockDate([DateTime? firstMoment, DateTime? secondMoment]) {
   firstMoment ??= DateTime.fromMillisecondsSinceEpoch(0);
   secondMoment ??= DateTime.now();
 

@@ -1,12 +1,9 @@
-import 'dart:math';
-
-import 'package:mock_data/src/constants.dart';
 import 'package:mock_data/mock_data.dart';
+import 'package:mock_data/src/constants.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('mockString tests', () {
-
     test('Test mockString only', () {
       expect(mockString().length, equals(16));
       expect(mockString(5).length, equals(5));
@@ -20,32 +17,30 @@ void main() {
 
     test('Test mockString called from mockRange', () {
       expect(mockRange(mockString, 10).length, equals(10));
-      expect(mockRange(mockString, 5,
-          lengthOfMockedString: 3).map((s) => s.length).toList(),
+      expect(
+          mockRange(mockString, 5, lengthOfMockedString: 3)
+              .map((s) => s.length)
+              .toList(),
           equals(List<int>.generate(5, (_) => 3)));
     });
-
   });
 
   group('mockInteger tests', () {
-
     test('Test mockInteger only', () {
       expect(mockInteger(), inInclusiveRange(1, 10));
       expect(mockInteger(-15, -10), inInclusiveRange(-15, -10));
       expect(mockInteger(-7, 17), inInclusiveRange(-7, 17));
-      mockRange(mockInteger, 100, min: 1, max: 10).forEach((el) =>
-          expect(el, inInclusiveRange(1, 10)));
+      mockRange(mockInteger, 100, min: 1, max: 10)
+          .forEach((el) => expect(el, inInclusiveRange(1, 10)));
     });
 
     test('Test mockInteger called from mockRange', () {
-      mockRange(mockInteger, 100, min: 1, max: 10).forEach((el) =>
-          expect(el, inInclusiveRange(1, 10)));
+      mockRange(mockInteger, 100, min: 1, max: 10)
+          .forEach((el) => expect(el, inInclusiveRange(1, 10)));
     });
-
   });
 
   group('mockIPv4 tests', () {
-
     test('Test mockIPv4 only', () {
       expect(mockIPv4('192.168.0.1'), equals('192.168.0.1'));
       expect(mockIPv4('192.168.*.*'), startsWith('192.168.'));
@@ -55,11 +50,9 @@ void main() {
     test('Test mockIPv4 called from mockRange', () {
       //mockRange(mockIPv4, 15).forEach((ip) => expect(ip.toString(), ));
     });
-
   });
 
   group('mockIPv6 tests', () {
-
     test('Test mockIPv6 only', () {
       expect(mockIPv6('e331:93bf:*:*:a7c9:a63:*:*'), startsWith('e331:93bf:'));
       expect(mockIPv6().split(':').length, equals(8));
@@ -68,11 +61,9 @@ void main() {
     test('Test mockIPv6 called from mockRange', () {
       //mockRange(mockIPv6, 15).forEach((ip) => expect(ip.toString(), ));
     });
-
   });
 
   group('mockName tests', () {
-
     test('Test mockName only', () {
       expect(maleNames.union(femaleNames), contains(mockName()));
       expect(maleNames, contains(mockName('male')));
@@ -81,13 +72,12 @@ void main() {
 
     test('Test mockName called from mockRange', () {
       expect(mockRange(mockName, 15).length, equals(15));
-      expect(femaleNames, containsAll(mockRange(mockName, 15, gender: 'female').toSet()));
+      expect(femaleNames,
+          containsAll(mockRange(mockName, 15, gender: 'female').toSet()));
     });
-
   });
 
   group('mockColor tests', () {
-
     test('Test mockColor only', () {
       expect(mockColor(), startsWith('rgb'));
       expect(mockColor('hex'), startsWith('#'));
@@ -102,27 +92,23 @@ void main() {
     test('Test mockColor called from mockRange', () {
       expect(mockRange(mockColor, 15).length, equals(15));
     });
-
   });
 
   group('mockColor tests', () {
-
     test('Test mockUrl only', () {
       expect(mockUrl(), startsWith('http'));
       expect(mockUrl('https'), startsWith('https'));
-      expect(mockUrl('http', true, true), allOf(
-          ['http', 'example', '?'].map(contains).toList()));
+      expect(mockUrl('http', true, true),
+          allOf(['http', 'example', '?'].map(contains).toList()));
       expect(mockUrl('*', false, false, true), contains('#'));
     });
 
     test('Test mockColor called from mockRange', () {
       expect(mockRange(mockUrl, 15).length, equals(15));
     });
-
   });
 
   group('mockUUID tests', () {
-
     test('Test mockUUID only', () {
       // Test UUID length.
       expect(mockUUID(), hasLength(36));
@@ -143,19 +129,13 @@ void main() {
     test('Test mockUUID called from mockRange', () {
       expect(mockRange(mockUUID, 5).length, equals(5));
     });
-
   });
 
   group('mockDate tests', () {
-
-    test('Test mockDate only', () {
-
-    });
-
+    test('Test mockDate only', () {});
   });
 
   group('mockLocation tests', () {
-
     test('Test mockLocation only', () {
       final location = mockLocation();
       expect(location['lat'], lessThanOrEqualTo(90.0));
@@ -164,7 +144,12 @@ void main() {
 
     test('Test mockLocation called from mockRange', () {
       final locations = mockRange(mockLocation, 16);
-      expect(locations.any((loc) => distance(55.7520, 37.6175, loc['lat'] as double, loc['lon'] as double) > 1000), false);
+      expect(
+          locations.any((loc) =>
+              distance(55.7520, 37.6175, loc['lat'] as double,
+                  loc['lon'] as double) >
+              1000),
+          false);
     });
   });
 }
