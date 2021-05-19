@@ -55,6 +55,7 @@ These are some basic examples. There are many more methods and they all support 
 ### Contributors
 - [Dinko Pehar](https://github.com/dinko-pehar)
 - [Nagasai Bodepudi](https://github.com/nagasaiBodepudi)
+- [Volodymyr Buberenko](https://github.com/vbuberen)
 
 ### License
 [MIT][]
