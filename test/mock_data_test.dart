@@ -94,7 +94,7 @@ void main() {
     });
   });
 
-  group('mockColor tests', () {
+  group('mockUrl tests', () {
     test('Test mockUrl only', () {
       expect(mockUrl(), startsWith('http'));
       expect(mockUrl('https'), startsWith('https'));
@@ -103,7 +103,7 @@ void main() {
       expect(mockUrl('*', false, false, true), contains('#'));
     });
 
-    test('Test mockColor called from mockRange', () {
+    test('Test mockUrl called from mockRange', () {
       expect(mockRange(mockUrl, 15).length, equals(15));
     });
   });
@@ -132,7 +132,30 @@ void main() {
   });
 
   group('mockDate tests', () {
-    test('Test mockDate only', () {});
+    test('Test mockDate only', () {
+      final mockedDate = mockDate();
+      expect(mockedDate, isA<DateTime>());
+    });
+
+    test('Test mockDate in provided range', () {
+      final firstMoment = DateTime(2000);
+      final lastMoment = DateTime(2020);
+      final mockedDate = mockDate(firstMoment, lastMoment);
+      expect(
+        mockedDate.millisecondsSinceEpoch,
+        greaterThan(firstMoment.millisecondsSinceEpoch),
+      );
+      expect(
+        mockedDate.millisecondsSinceEpoch,
+        lessThan(lastMoment.millisecondsSinceEpoch),
+      );
+    });
+
+    test('Test mockDate called from mockRange', () {
+      final mockedDates = mockRange(mockDate, 5);
+      expect(mockedDates.length, equals(5));
+      expect(mockedDates.every((date) => date.runtimeType == DateTime), true);
+    });
   });
 
   group('mockLocation tests', () {
