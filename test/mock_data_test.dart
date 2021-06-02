@@ -167,12 +167,8 @@ void main() {
 
     test('Test mockLocation called from mockRange', () {
       final locations = mockRange(mockLocation, 16);
-      expect(
-          locations.any((loc) =>
-              distance(55.7520, 37.6175, loc['lat'] as double,
-                  loc['lon'] as double) >
-              1000),
-          false);
+      expect(locations.every((location) => location['lat'] > 90.0), false);
+      expect(locations.every((location) => location['lon'] > 180.0), false);
     });
   });
 }

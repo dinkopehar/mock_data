@@ -1,4 +1,9 @@
-# 1.2.7
+## 2.0.0
+- NEW: 'mockLocation' for location mocking
+- UPDATED: Migrated to sound null-safety.
+- IMPROVED: Minor tests refactoring
+
+## 1.2.7
 - IMPROVED: README.md section reduced to basic examples. For more advanced
             usage refer to examples section.
 - REMOVED: TODO file. Refer to Project tab for Roadmap.
