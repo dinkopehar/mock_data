@@ -1,11 +1,11 @@
 name: mock_data
 description: Generate random data using Dart. Can be used to create random strings,
   integers, names, colors, IPs, UUIDs, URLs and dates.
-version: 2.0.0
-homepage: https://github.com/PinkFrojd/mock_data
+version: 2.0.1
+homepage: https://github.com/dinkopehar/mock_data
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.12.0 <4.0.0'
 
 #dependencies:
 #  path: ^1.4.1

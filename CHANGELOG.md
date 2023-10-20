@@ -1,3 +1,6 @@
+## 2.0.1
+- UPDATED: Bump Dart to version 3
+
 ## 2.0.0
 - NEW: 'mockLocation' for location mocking
 - UPDATED: Migrated to sound null-safety.

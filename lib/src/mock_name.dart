@@ -12,7 +12,7 @@ import 'constants.dart' show random, femaleNames, maleNames;
 /// Throws [ArgumentError] if gender is set to anything other
 /// than _'male'_ or _'female'_ or _'any'_.
 ///
-/// For list of names, check [names](https://github.com/PinkFrojd/mock_data/blob/master/assets/names.md).
+/// For list of names, check [names](https://github.com/dinkopehar/mock_data/blob/master/assets/names.md).
 ///
 /// Example usage:
 /// ```dart

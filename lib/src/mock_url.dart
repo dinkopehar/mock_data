@@ -19,7 +19,7 @@ import 'constants.dart' as cn hide maleNames, femaleNames;
 /// by a hash _(#)_. Usually called permalink.
 /// Default set to `false`.
 ///
-/// For complete list of url build parts, check [urlBuildParts](https://github.com/PinkFrojd/mock_data/blob/master/assets/urlBuildParts.md).
+/// For complete list of url build parts, check [urlBuildParts](https://github.com/dinkopehar/mock_data/blob/master/assets/urlBuildParts.md).
 ///
 /// Example usage:
 /// ```dart
