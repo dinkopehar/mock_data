@@ -105,6 +105,26 @@ var femaleNames = Set<String>.from([
   'Samantha'
 ]);
 
+var familyNames = Set<String>.from([
+  'Smith',
+  'Johnson',
+  'Williams',
+  'Jones',
+  'Brown',
+  'Miller',
+  'Wilson',
+  'Moore',
+  'Taylor',
+  'Anderson',
+  'Jackson',
+  'White',
+  'Thompson',
+  'Garcia',
+  'Martinez',
+  'Robinson',
+  'Jameson'
+]);
+
 // Random build parts for mockUrl function.
 var path = <String>['foo', 'bar', 'buz', 'qux'];
 var query = <String>['b=3', 'd=4', 'username=waldo', 'q=xyzzy'];

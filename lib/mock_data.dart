@@ -16,6 +16,7 @@ library mock_data;
 
 export 'src/mock_color.dart';
 export 'src/mock_date.dart';
+export 'src/mock_family_name.dart';
 export 'src/mock_integer.dart';
 export 'src/mock_ip.dart';
 export 'src/mock_location.dart';
@@ -121,6 +122,8 @@ List<E> mockRange<E>(Function mockFunction, int numberOfMocks,
       return List<E>.generate(numberOfMocks, (_) => mockFunction(format));
     case 'mockName':
       return List<E>.generate(numberOfMocks, (_) => mockFunction(gender));
+    case 'mockFamilyName':
+      return List<E>.generate(numberOfMocks, (_) => mockFunction());
     case 'mockColor':
       return List<E>.generate(numberOfMocks, (_) => mockFunction(returnModel));
     case 'mockUrl':

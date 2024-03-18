@@ -77,6 +77,18 @@ void main() {
     });
   });
 
+  group('mockFamilyName tests', () {
+    test('Test mockFamilyName', () {
+      expect(familyNames, contains(mockFamilyName()));
+    });
+
+    test('Test mockFamilyName called from mockRange', () {
+      expect(mockRange(mockFamilyName, 10).length, equals(10));
+      expect(familyNames,
+          containsAll(mockRange(mockFamilyName, 15).toSet()));
+    });
+  });
+
   group('mockColor tests', () {
     test('Test mockColor only', () {
       expect(mockColor(), startsWith('rgb'));
