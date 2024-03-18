@@ -84,8 +84,7 @@ void main() {
 
     test('Test mockFamilyName called from mockRange', () {
       expect(mockRange(mockFamilyName, 10).length, equals(10));
-      expect(familyNames,
-          containsAll(mockRange(mockFamilyName, 15).toSet()));
+      expect(familyNames, containsAll(mockRange(mockFamilyName, 15).toSet()));
     });
   });
 
