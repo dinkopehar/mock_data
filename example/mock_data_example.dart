@@ -38,11 +38,12 @@ void main() {
   mockIPv6('e1b3:7bae:*:3474:*:c0cc:462:c4b9'); // Similar to IPv4 segments.
   // ---------
 
-  // Mock first name.
+  // Mock names (names and surnames).
   // ---------
   mockName();         // Male of female first name(default).
   mockName('male');   // Random male name.
   mockName('female'); // Random female name.
+  mockFamilyName();   // Random surname.
   // ---------
 
   // Mock color from a given color model.
